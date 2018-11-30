@@ -1,0 +1,38 @@
+
+Initial Production
+
+1. Move 'frog' with arrow keys
+2. Get the 'cars' moving side to side (need to think about this)
+3. Fail state (impact with cars)
+4. Victory State
+
+5. Start button
+
+
+Get this done before December 14th
+
+
+
+Extras (listed by difficulty)
+
+1. Custom Sprites (frog and cars) + Background 
+2. Timer (show at time taken at end)
+3. Music
+
+4. Change direction frog is facing with arrow key movements
+5. Different Start and end screen
+6. Leaderboard
+7. Multiple frogs in one round
+8. Multiple rounds
+
+W should be able to complete 1,2,3, the others are a stretch goal.
+
+
+Last Additions:
+
+- Report
+- READme file 
+ 
+
+
+ 
