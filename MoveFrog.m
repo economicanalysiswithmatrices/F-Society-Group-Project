@@ -38,6 +38,12 @@ end
 display poscowY
 
 end
+%rotation of object
+r1 = 2*pi;
+for t=linspace(0,1,10)
+  cow = makehgtform( 'xrotate',r1);
+  drawnow
+end
 
 
                 
