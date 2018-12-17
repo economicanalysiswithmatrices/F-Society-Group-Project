@@ -114,6 +114,7 @@ set(fig1,'KeyPressFcn',@PressKey);
        
    
     %Finish game on winstate
+    %Displays 'You win!' in MATLAB command window
     function Over()
         set(fig1,'KeyPressFcn',@Empty);
         set(fig1,'CurrentObject',imagesc(grid));
