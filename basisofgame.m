@@ -22,8 +22,8 @@ grid(x,y) = 1
 
 %Cow stuff
 length = 1
-posX = zeros(length);  %array holds all the coordinates
-posY = zeros(length);  %  of the snake's body elements
+posX = zeros(1)
+posY = zeros(1)
 posX(1) = x;
 posY(1) = y;
 
