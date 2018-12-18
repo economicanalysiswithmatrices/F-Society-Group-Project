@@ -68,18 +68,16 @@ set(fig1,'KeyPressFcn',@PressKey);
                case 'uparrow'
                    if x < 2            
                        x = x
-                   elseif (x==1)
+                   
+                   elseif (x==2)
                        Over();
-                       
-                  
+   
                    else
                        x = x-1
                    end
                case 'downarrow'
                    if x > 18
                        x = x
-                   elseif (x==1)
-                       Over();
                        
                    else
                        x = x+1
@@ -87,19 +85,14 @@ set(fig1,'KeyPressFcn',@PressKey);
                case 'rightarrow'
                    if y >9
                        y = y
-                   
-                   elseif (x==1)
-                       Over();
                        
                    else
                        y = y+1
                    end
                case 'leftarrow'
                    if y <2
-                       y = y
-                   
-                   elseif (x==1)
-                       Over();                      
+                       y = y                   
+                                        
                    else
                        y = y-1
                    end 
