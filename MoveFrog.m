@@ -30,26 +30,37 @@ display(poscowY)
     switch varargin{2}.Key
         case 'uparrow'
             if poscowY<4
-            poscowY = poscowY+1
+                poscowY = poscowY+1
+            elseif poscowY>3
+                Over()
             end
     
     
         case 'downarrow'
             if poscowY>0
-            poscowY = poscowY-1
+                poscowY = poscowY-1
             end
         case 'rightarrow'
             if poscowX <8.5
-            poscowX = poscowX+1
+                poscowX = poscowX+1
             end
     
         case 'leftarrow'
             if poscowX>1
-            poscowX = poscowX-1
+                poscowX = poscowX-1
             end
         
        end 
 set(cow,'Ydata',poscowY,'XData',poscowX)
 
+end
+function empty(~)
+end
+function Over()
+    set(fig1,'KeyPressFcn',@empty)
+    pause(0.01)
+    close(fig1);
+    disp("You win!")
+end
 end
 end
