@@ -236,6 +236,7 @@ rectangle('position',[-1 0 1 1],'facecolor', 'b','parent',car) ;
 
 
 
+
 car2 = hgtransform;
 
 rectangle('position',[2 0 3 1],'facecolor', 'b','parent',car2) ;
@@ -272,11 +273,11 @@ pt2_3 = [0 3 0];
 
 
 
-for  R = 1:1000
+for  R=linspace(0,1,10)
+ 
+ 
 
-    
-
-    for t=linspace(0,1,500)
+    for t=linspace(0,1,300)
 
         
 
@@ -285,23 +286,30 @@ for  R = 1:1000
         car2.Matrix = makehgtform('translate',pt1_2 + t*(pt2_2-pt1_2))
 
         car3.Matrix = makehgtform('translate',pt1_3 + t*(pt2_3-pt1_3))
-
-        
-
+      
         drawnow
 
     end
     
-    poscowY1 = get(cow,'Ydata')
+  if poscowY>=4 
+       close all
+  % xposcar1= get(car,'position')
+  
+  
+ 
     
-    if poscowY1 == 4
-        close all
-       
-    end
-    
+  
+        
+
+      
+   end
     
 
-end
+   
+ end
+    
+
+
 
 
 
