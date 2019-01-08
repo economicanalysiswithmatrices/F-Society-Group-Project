@@ -2,7 +2,7 @@ function frog1()
 
   
 fig1 = figure('KeyPressFcn',@presskeys)
-rectangle('position',[0 0 10 5]) %big boundry
+rectangle('position',[0 0 10 10]) %big boundry
 rectangle('position',[0 0 10 1],'facecolor',[0 0.5,0])%lanes
 rectangle('position',[0 1 10 1],'facecolor','k')
 rectangle('position',[0 2 10 1],'facecolor','k')
@@ -19,8 +19,12 @@ cow = patch(xRana,yRana,'y','edgecolor','b');
 %cow = rectangle('position',[4.5 0 1 1],'facecolor','w');%character
 poscowX = get(cow,'XData')%searching for position of cow on the board
 poscowY = get(cow,'YData')
-    
+
+if poscowY(1) == 4
+    Over()
+end
     function presskeys(varargin)      
+     %while over == 0    
         poscowX = get(cow,'XData')%searching for position of cow on the board        
         poscowY = get(cow,'YData')        
         display(poscowX)        
@@ -28,10 +32,16 @@ poscowY = get(cow,'YData')
                         
         switch varargin{2}.Key
             case 'uparrow'
-                if poscowY<4                    
+                 if poscowY(1)==4
+                    poscowY = yRana
+                    
+                     %disp('Youwin')
+                    
+                    %Over()
+                elseif poscowY<4                    
                     poscowY = poscowY+1
-                  elseif poscowY(1)>1
-                    Over()
+                    disp(poscowY(1))
+               
                 end                
                                                               
             case 'downarrow'                
@@ -49,9 +59,11 @@ poscowY = get(cow,'YData')
                     poscowX = poscowX-1                    
                 end                                                
         end        
-        set(cow,'Ydata',poscowY,'XData',poscowX)                      
+        set(cow,'Ydata',poscowY,'XData',poscowX) 
+        %pause(0.3)
+     %end
     end
-
+    
     
 
 axis off
@@ -78,7 +90,7 @@ pt1_3 = [10 3  0];
 pt2_3 = [0 3 0];
 
 
-    while over == 0
+while over == 0;
     
     for  R=linspace(0,1,10000)
 
@@ -93,7 +105,7 @@ pt2_3 = [0 3 0];
             drawnow
         end
     end
-    end 
+end 
     
 
 
@@ -107,6 +119,8 @@ function Nokeys(~)
 end
 close(fig1)   
 function Over()
+    %poscowY = poscowY+1
+    %set(cow,'Ydata',poscowY,'XData',poscowX) 
     set(fig1,'KeyPressFcn',@Nokeys)
     over = 1   
     youwin1()
@@ -116,4 +130,4 @@ function Over()
     close(fig1)
 end
 end
-        % xposcar1= get(car,'position')        
+        % xposcar1= get(car,'position')  
