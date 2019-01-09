@@ -19,38 +19,35 @@ cow = patch(xRana,yRana,'y','edgecolor','b');
 poscowX = get(cow,'XData');%searching for position of cow on the board
 poscowY = get(cow,'YData');
     
-    function presskeys(varargin)      
-        poscowX = get(cow,'XData');%searching for position of cow on the board        
-        poscowY = get(cow,'YData');        
-        display(poscowX)        
-        display(poscowY)
+function presskeys(varargin)      
+    poscowX = get(cow,'XData');%searching for position of cow on the board        
+    poscowY = get(cow,'YData');        
+    display(poscowX)        
+    display(poscowY)
                         
-        switch varargin{2}.Key
-            case 'uparrow'
-                if poscowY<4                   
-                    poscowY = poscowY+1;
-                
-                end                
+    switch varargin{2}.Key
+        case 'uparrow'
+            if poscowY<4                   
+                poscowY = poscowY+1;                
+            end                
                                                               
-            case 'downarrow'                
-                if poscowY>0                    
-                    poscowY = poscowY-1;                    
-                end
+        case 'downarrow'                
+            if poscowY>0                    
+                poscowY = poscowY-1;                    
+            end
                 
-            case 'rightarrow'                
-                if poscowX <8.5                    
-                    poscowX = poscowX+1;                    
-                end               
+        case 'rightarrow'                
+            if poscowX <8.5                    
+                poscowX = poscowX+1;                    
+            end               
                                
-            case 'leftarrow'                
-                if poscowX>1                    
-                    poscowX = poscowX-1;                    
-                end                                                
-        end        
-        set(cow,'Ydata',poscowY,'XData',poscowX)                      
-    end
-
-    
+        case 'leftarrow'                
+            if poscowX>1                    
+                poscowX = poscowX-1;                    
+            end
+        end
+    set(cow,'Ydata',poscowY,'XData',poscowX)                      
+end
 
 
 xlim([0 10])
@@ -125,10 +122,6 @@ while over==0
 end
 
 
-
-
-
-
 function youwin1()
     youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
     set(youwin,'visible','on');
@@ -136,7 +129,6 @@ end
 function youlose1()
     youlose = text(0,3,{'You Lose.'},'color','m','fontsize',72);
     set(youlose,'visible','on');
-    
 end
 
 function Nokeys(~)
@@ -162,4 +154,3 @@ function Lose()
 end
 
 end
-
