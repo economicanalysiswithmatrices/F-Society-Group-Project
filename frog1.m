@@ -7,10 +7,9 @@ rectangle('position',[0 1 10 1],'facecolor','k')
 rectangle('position',[0 2 10 1],'facecolor','k')
 rectangle('position',[0 3 10 1],'facecolor','k')
 rectangle('position',[0 4 10 1],'facecolor','g')
-axis off
 
+axis off
 over = 0
-grid = zeros(10,10)
 
 xRana = 4.5+ 15.*[0.0 0.4 0.4 0.2 0.4 0.6 0.8 0.6 0.6 1.0 0.8  1.0 0.8 0.7 0.9 0.8 0.9   0.83 0.8 0.7 0.3 0.2   0.16 0.1 0.2 0.1 0.3 0.2 0.0 0.2]/16;
 yRana = 15.*[0.0 0.0 0.1 0.4 0.1 0.1 0.4 0.1 0.0 0.0 0.1  0.4 0.5 0.4 0.6 0.8 0.9   0.93 1.0 0.9 0.9 1.0   0.93 0.9 0.8 0.6 0.4 0.5 0.4 0.1]/16;
@@ -52,8 +51,6 @@ poscowY = get(cow,'YData')
     end
 
     
-
-axis on
 xlim([0 10])
 ylim([0 5])
 
