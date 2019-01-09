@@ -131,7 +131,7 @@ function youlose1()
     set(youlose,'visible','on');
 end
 
-function Nokeys(~)
+function Nokeys(~,~)
 end  
 
 function Win()
