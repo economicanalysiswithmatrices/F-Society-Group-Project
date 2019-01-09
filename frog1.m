@@ -1,7 +1,7 @@
 function frog1()
 
   
-fig1 = figure('KeyPressFcn',@presskeys);
+fig1 = figure('KeyPressFcn',@presskeys,'position', [500 90 1000 900]);
 rectangle('position',[0 0 10 5]) %big boundry
 rectangle('position',[0 0 10 1],'facecolor',[0 0.5,0])%lanes
 rectangle('position',[0 1 10 1],'facecolor','k')
@@ -123,11 +123,11 @@ end
 
 
 function youwin1()
-    youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
+    youwin = text(0,3,{'You Win!'},'color','r','fontsize',145);
     set(youwin,'visible','on');
 end    
 function youlose1()
-    youlose = text(0,3,{'You Lose.'},'color','m','fontsize',72);
+    youlose = text(0,3,{'You Lose.'},'color','m','fontsize',130);
     set(youlose,'visible','on');
 end
 
