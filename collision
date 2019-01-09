@@ -1,0 +1,10 @@
+%collision
+poly1= cow
+poly2= car
+ploy3= car2
+if TF=overlaps( poly1,poly2)
+then %end game function
+else []
+if TF=overlaps( poly1,poly3)
+then %end game function
+else []
