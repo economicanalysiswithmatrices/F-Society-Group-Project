@@ -122,6 +122,7 @@ car(2) = rectangle('position',[5 2 3 1],'facecolor', 'b');
 car(3) = rectangle('position',[3 3 1.5 1],'facecolor', 'b');
 
 %(r(:,1))
+flag_reached_end = 1; % this signals if we reached the end of the game board
 
 %  for n=1:length(r(:,1))
 while A==1
@@ -129,7 +130,12 @@ while A==1
     
     for n = 1:length(car(:))
         carpos1 = get(car(n),'position');
-        carpos1(1) = carpos1(1) + 0.05;
+        if carpos1(1) > 10
+            flag_reached_end = -1;
+        elseif carpos1(1) < 0
+            flag_reached_end = 1;
+        end
+        carpos1(1) = carpos1(1) + flag_reached_end* 0.05;
      set(car(n),'position',carpos1);
         drawnow
         
