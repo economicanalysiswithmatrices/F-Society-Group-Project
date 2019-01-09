@@ -1,6 +1,4 @@
-
 function frog1()
-
   
 fig1 = figure('KeyPressFcn',@presskeys)
 rectangle('position',[0 0 10 5]) %big boundry
@@ -68,24 +66,24 @@ car(3) = rectangle('position',[3 3 1.5 1],'facecolor', 'b');
 %(r(:,1))
 
 %  for n=1:length(r(:,1))
-while A==1
+while over==0
     pause(0.01)
     carpos1 = get(car(1),'position');
     carpos2 = get(car(2),'position');
     carpos3 = get(car(3),'position');
      
     if carpos1(1) > 10   
-        carpos1(1) =-2;
+        carpos1(1) = -2;
         set(car(1),'position',carpos1);
     
     elseif carpos1(1) < 10
-        carpos1 = get(car(1),'position');
+        carpos1 = get(car(1),'position');      % This line might not be necessary for our code
         carpos1(1) = carpos1(1) + 0.03;
         set(car(1),'position',carpos1);
     end
         
     if carpos2(1) > 10   
-        carpos2(1) =-9;
+        carpos2(1) = -9;
         set(car(2),'position',carpos2);
         
     elseif carpos2(1) < 10
@@ -95,7 +93,7 @@ while A==1
     end
 
     if carpos3(1) > 10   
-        carpos3(1) =-2;
+        carpos3(1) = -2;
         set(car(3),'position',carpos3);
     
     elseif carpos3(1) < 10
@@ -106,27 +104,26 @@ while A==1
    
     
      %set(car(1),'position',carpos1);
-     
-    
-
-
 end
-    function youwin1()
-        youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
-        set(youwin,'visible','on');
-    end
+
+
+
+
+
+
+function youwin1()
+    youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
+    set(youwin,'visible','on');
+end
+
 function Nokeys(~)
-end
-close(fig1)   
+end  
+
 function Over()
     set(fig1,'KeyPressFcn',@Nokeys)
-    over = 1   
-    youwin1()
-    %close(fig1);
-    %disp("You win!")
+    over = 1;   
+    youwin1()    
     pause(1.5)
     close(fig1)
 end
 end
-        % xposcar1= get(car,'position')      
-
