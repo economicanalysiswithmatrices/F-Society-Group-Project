@@ -1,4 +1,3 @@
-
 function frog1()
 
   
@@ -113,3 +112,23 @@ end
 
 
 
+    function youwin1()
+        youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
+        set(youwin,'visible','on');
+    end
+function Nokeys(~)
+end
+  
+function Over()
+    %poscowY = poscowY+1
+    %set(cow,'Ydata',poscowY,'XData',poscowX) 
+    set(fig1,'KeyPressFcn',@Nokeys)
+    over = 1   
+    youwin1()
+    %close(fig1);
+    disp("You win!")
+    pause(1.5)
+    close(fig1)
+end
+
+end    % xposcar1= get(car,'position')  
