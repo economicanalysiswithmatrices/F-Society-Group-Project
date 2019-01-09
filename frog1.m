@@ -101,13 +101,27 @@ while over==0
         carpos3(1) = carpos3(1) + 0.05;
         set(car(3),'position',carpos3);
     end
-    distX = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
-    distY = abs(carpos1(2)-poscowY(1));
     
-    if  distY<1/20 && distX<(carpos1(3)/2 + 1/60);
+    Xdist1 = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
+    Ydist1 = abs(carpos1(2)-poscowY(1));
+    
+    if  Ydist1<1/100 && Xdist1<(carpos1(3)/2)
         Lose()
     end
-   
+    
+    Xdist2 = abs((carpos2(1)+carpos2(3)/2)-(poscowX(1)));
+    Ydist2 = abs(carpos2(2)-poscowY(1));
+    
+    if  Ydist2<1/100 && Xdist2<(carpos2(3)/2)
+        Lose()
+    end
+    
+    Xdist3 = abs((carpos3(1)+carpos3(3)/2)-(poscowX(1)));
+    Ydist3 = abs(carpos3(2)-poscowY(1));
+    
+    if  Ydist3<1/100 && Xdist3<(carpos3(3)/2)
+        Lose()
+    end
 end
 
 
