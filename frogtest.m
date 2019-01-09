@@ -1,15 +1,11 @@
 function frog1()
 
-[data fs]=audioread('carsound.wav')
-sound(data, fs);
+ [carsoundmusic, carsound_frames_per_second] = audioread('carsounds.mp3')
+
+    sound(carsoundmusic,carsound_frames_per_second)
+
 
    
-
-
-
-
-
-
 
 
 
