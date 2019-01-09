@@ -69,7 +69,7 @@ while over==0
     poscowY = get(cow,'YData');
     if poscowY > 3
         over = 1;
-        Over()
+        Win()
     end
      
     if carpos1(1) > 10   
@@ -101,6 +101,13 @@ while over==0
         carpos3(1) = carpos3(1) + 0.05;
         set(car(3),'position',carpos3);
     end
+    distX = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
+    distY = abs(carpos1(2)-poscowY(1));
+    
+    if  distY<1/20 && distX<(carpos1(3)/2 + 1/60);
+        Lose()
+    end
+   
 end
 
 
@@ -111,17 +118,34 @@ end
 function youwin1()
     youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
     set(youwin,'visible','on');
+end    
+function youlose1()
+    youlose = text(0,3,{'You Lose.'},'color','m','fontsize',72);
+    set(youlose,'visible','on');
+    
 end
 
 function Nokeys(~)
 end  
 
-function Over()
+function Win()
     set(fig1,'KeyPressFcn',@Nokeys)
     over = 1;   
     youwin1()    
     pause(1.5)
     delete(gca)
-    close(fig1)
+    close(fig1)    
 end
+
+function Lose()
+    set(fig1,'KeyPressFcn',@Nokeys)
+    over = 1;   
+    youlose1()    
+    pause(1.5)
+    delete(gca)
+    close(fig1)  
+
 end
+
+end
+
