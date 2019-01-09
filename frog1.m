@@ -18,6 +18,14 @@ cow = patch(xRana,yRana,'y','edgecolor','b');
 %cow = rectangle('position',[4.5 0 1 1],'facecolor','w');%character
 poscowX = get(cow,'XData');%searching for position of cow on the board
 poscowY = get(cow,'YData');
+
+%if over ==0
+%for m = 1:10
+%[drivebysound, Driveby_fps] = audioread('BMW+driveby.mp3');
+%sound(drivebysound, Driveby_fps);
+%pause(5)
+
+
     
 function presskeys(varargin)      
     poscowX = get(cow,'XData');%searching for position of cow on the board        
@@ -119,6 +127,8 @@ while over==0
     if  Ydist3<1/100 && Xdist3<(carpos3(3)/2)
         Lose()
     end
+    
+   
 end
 
 
@@ -136,21 +146,27 @@ end
 
 function Win()
     set(fig1,'KeyPressFcn',@Nokeys)
-    over = 1;   
-    youwin1()    
-    pause(1.5)
+    over = 1;
+    [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
+    sound(CheerSound, Cheer_fps);    
+    %https://www.freesoundeffects.com/free-track/cheer2-426825/
+    youwin1()
+    pause(4)
     delete(gca)
     close(fig1)    
 end
 
 function Lose()
     set(fig1,'KeyPressFcn',@Nokeys)
+    [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
+    sound(Carhit, Carhit_fps);
+    %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
+    pause(2)
     over = 1;   
     youlose1()    
     pause(1.5)
     delete(gca)
     close(fig1)  
-
 end
 
 end
