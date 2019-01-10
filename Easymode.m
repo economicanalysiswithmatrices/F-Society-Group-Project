@@ -34,7 +34,7 @@ rectangle('position',[-1 3.45 2 0.1],'facecolor','y')
 rectangle('position',[3 3.45 2 0.1],'facecolor','y')
 rectangle('position',[7 3.45 2 0.1],'facecolor','y')
 
-%Turn off axis
+%Turn off axis.
 axis off
 
 %Gameover flag.
