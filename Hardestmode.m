@@ -1,4 +1,4 @@
-function Hardmode()
+function Hardestmode()
 %Creates figure for game.
 fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900]);
 
@@ -64,6 +64,11 @@ cow = patch(xRana,yRana,'y','edgecolor','b');
 poscowX = get(cow,'XData');
 poscowY = get(cow,'YData');
 
+%http://www.classicgaming.cc/classics/frogger/sounds
+[Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
+[Bg, Bg_fps] = audioread('bg.mp3'); % THIS IS A PLACEHOLDER
+sound(Bg, Bg_fps);
+
 %%
 function presskeys(varargin)              
 
@@ -72,25 +77,33 @@ function presskeys(varargin)
                 
         case 'uparrow'                             
             poscowY = poscowY+1; 
+            sound(Hop, Hop_fps);
+
                 
         case 'downarrow'
             %Makes sure frog stays inside playing area.
             if poscowY>0                    
-                poscowY = poscowY-1;                    
+                poscowY = poscowY-1;
+                sound(Hop, Hop_fps);
+
             end
 
         case 'rightarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
             if poscowX <9.5                    
-                poscowX = poscowX+0.5;                    
+                poscowX = poscowX+0.5;
+                sound(Hop, Hop_fps);
+
             end                                             
 
         case 'leftarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
             if poscowX>0                    
-                poscowX = poscowX-0.5;                    
+                poscowX = poscowX-0.5; 
+                sound(Hop, Hop_fps);
+
             end
     end
     %Sets new Frog position after every arrow key movement.
@@ -117,17 +130,17 @@ car(12) = rectangle('position',[6 6 1.5 0.9],'facecolor', 'y','edgecolor','w','l
 
 
 %Random speed of cars upon game startup within a set range of values.
-rand1 = 0.03+0.09*rand();
-rand2 = 0.03+0.09*rand();
-rand3 = 0.03+0.09*rand();
-rand4 = 0.1+0.09*rand();
-rand5 = 0.03+0.09*rand();
+rand1 = 0.03+0.12*rand();
+rand2 = 0.03+0.12*rand();
+rand3 = 0.03+0.12*rand();
+rand4 = 0.1+0.12*rand();
+rand5 = 0.03+0.12*rand();
 
 %%
 function speed3()
 while over==0
     %Sets a fixed refresh rate for the game.
-    pause(0.0035)
+    pause(0.005)
     
     %Get X position of each car every 0.01s.
     carpos1 = get(car(1),'position');
@@ -465,6 +478,7 @@ end
 function Win()
     set(fig1,'KeyPressFcn',@Nokeys)
     over = 1;
+    clear sound
     [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
     sound(CheerSound, Cheer_fps);    
     %https://www.freesoundeffects.com/free-track/cheer2-426825/
