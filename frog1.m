@@ -225,13 +225,11 @@ A=1
 
 
 
-car(1) = rectangle('position',[3 1 2 1],'facecolor', 'b');
-
+car(1) = rectangle('position',[0 1 2 1],'facecolor', 'b');
 car(2) = rectangle('position',[6 2 2.5 1],'facecolor', 'b');
-
-car(3) = rectangle('position',[11 3 1.5 1],'facecolor', 'b');
-car(4) = rectangle('position',[4 3 1.5 1],'facecolor', 'b');
-car(5) = rectangle('position',[15 1 2 1],'facecolor', 'b');
+car(3) = rectangle('position',[4 3 1.5 1],'facecolor', 'b');
+car(4) = rectangle('position',[10 1 2 1],'facecolor', 'b');
+car(5) = rectangle('position',[14 3 1.5 1],'facecolor', 'b');
 
 
 
@@ -276,49 +274,30 @@ while A==1
         
         
         
-        if  distY<1/20 && distX<(carpos1(3)/2 + 1/60);
+        if  distY<1/10 && distX<(carpos1(3)/2 + 1/60);
             
             youlose = text(0,3,{'You Lose!'},'color','r','fontsize',70);
             set(youlose,'visible','on');
+           
             A=0
+            
             set(fig1,'KeyPressFcn','')
-            pause(5)
             
-            
-            
-        end
-        
+            pause(5) 
+        end        
     end
-    
-    
-    
-    
-    
+ 
     if poscowY >= 4
         
         youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
         set(youwin,'visible','on');
+        
         A=0
+        
         set(fig1,'KeyPressFcn','')
-        pause(5)
-        
-        
-        
-        
-        
-        
+        pause(5)     
     end
-    
 end
-
-
-
-
-
-
-
-
-
 end
 
 
