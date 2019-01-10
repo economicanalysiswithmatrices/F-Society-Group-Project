@@ -69,6 +69,9 @@ car(2) = rectangle('position',[6 2 2.5 1],'facecolor', 'b');
 car(3) = rectangle('position',[7 3 1.5 1],'facecolor', 'b');
 car(4) = rectangle('position',[4 3 1.5 1],'facecolor', 'b');
 car(5) = rectangle('position',[15 1 2 1],'facecolor', 'b');
+rand1 = 0.1*rand()
+rand2 = 0.1*rand()
+rand3 = 0.1*rand()
 
 while over==0
     pause(0.01)
@@ -90,7 +93,7 @@ while over==0
     
     elseif carpos1(1) < 10
         %carpos1 = get(car(1),'position');      % This line might not be necessary for our code
-        carpos1(1) = carpos1(1) + 0.03;
+        carpos1(1) = carpos1(1) + rand1;
         set(car(1),'position',carpos1);
     end
         
@@ -100,7 +103,7 @@ while over==0
         
     elseif carpos2(1) < 10
         %carpos2 = get(car(2),'position');
-        carpos2(1) = carpos2(1) + 0.1;
+        carpos2(1) = carpos2(1) + rand2;
         set(car(2),'position',carpos2);       
     end
 
@@ -110,7 +113,7 @@ while over==0
     
     elseif carpos3(1) < 10
         %carpos3 = get(car(3),'position');
-        carpos3(1) = carpos3(1) + 0.05;
+        carpos3(1) = carpos3(1) + rand3;
         set(car(3),'position',carpos3);
     end
     
@@ -120,7 +123,7 @@ while over==0
     
     elseif carpos4(1) < 10
         %carpos3 = get(car(3),'position');
-        carpos4(1) = carpos4(1) + 0.05;
+        carpos4(1) = carpos4(1) + rand3;
         set(car(4),'position',carpos4);
     end
     
@@ -130,7 +133,7 @@ while over==0
     
     elseif carpos5(1) < 10
         %carpos3 = get(car(3),'position');
-        carpos5(1) = carpos5(1) + 0.03;
+        carpos5(1) = carpos5(1) + rand1;
         set(car(5),'position',carpos5);
     end
     Xdist1 = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
@@ -211,8 +214,6 @@ function Lose()
 end
 
 end
-    
-
     
 
    
