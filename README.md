@@ -1,16 +1,15 @@
 # F-Society-Group-Project
-
 Download startscreen.m, 
          Easymode.m
          Hardmode.m
          Hardestmode.m
+         carstarthonkbackfire.mp3
+         cheer2.mp3
+         sound-frogger-hop.wav
          
 Start game using startscreen.m
 
-Note: The game will not run properly as there is no music. To run the game, comment out audio section ( ~ line 60 in each mode)
-
-
-
+Note: Some of the audio which we are yet to add has been commented out
 
 Things to do:
 
