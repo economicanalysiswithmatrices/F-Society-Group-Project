@@ -5,12 +5,7 @@ function frog1()
 
 
 
-
-
-
-
-
-
+A=1
 
 fig1 = figure('KeyPressFcn',@presskeys)
 
@@ -124,7 +119,7 @@ poscowY = get(cow,'YData')
                 if poscowY<4
                     
                     
-                    
+                     pause(0.05)
                     poscowY = poscowY+1
                     
                     
@@ -148,7 +143,7 @@ poscowY = get(cow,'YData')
                 if poscowY>0
                     
                     
-                    
+                    pause(0.05)
                     poscowY = poscowY-1
                     
                     
@@ -164,7 +159,7 @@ poscowY = get(cow,'YData')
                 if poscowX <8.5
                     
                     
-                    
+                    pause(0.05)
                     poscowX = poscowX+0.5
                     
                     
@@ -184,7 +179,7 @@ poscowY = get(cow,'YData')
                 if poscowX>1
                     
                     
-                    
+                    pause(0.05)
                     poscowX = poscowX-0.5
                     
                     
@@ -221,7 +216,7 @@ ylim([0 5])
 
 
 
-A=1
+
 
 
 
