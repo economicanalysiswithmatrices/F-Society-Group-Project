@@ -5,7 +5,12 @@ function frog1()
 
 
 
-A=1
+
+
+
+
+
+
 
 fig1 = figure('KeyPressFcn',@presskeys)
 
@@ -119,7 +124,7 @@ poscowY = get(cow,'YData')
                 if poscowY<4
                     
                     
-                     pause(0.05)
+                    
                     poscowY = poscowY+1
                     
                     
@@ -143,7 +148,7 @@ poscowY = get(cow,'YData')
                 if poscowY>0
                     
                     
-                    pause(0.05)
+                    
                     poscowY = poscowY-1
                     
                     
@@ -159,8 +164,8 @@ poscowY = get(cow,'YData')
                 if poscowX <8.5
                     
                     
-                    pause(0.05)
-                    poscowX = poscowX+0.5
+                    
+                    poscowX = poscowX+1
                     
                     
                     
@@ -179,8 +184,8 @@ poscowY = get(cow,'YData')
                 if poscowX>1
                     
                     
-                    pause(0.05)
-                    poscowX = poscowX-0.5
+                    
+                    poscowX = poscowX-1
                     
                     
                     
@@ -216,15 +221,17 @@ ylim([0 5])
 
 
 
+gameover = 0
 
 
 
+car(1) = rectangle('position',[3 1 2 1],'facecolor', 'b');
 
-car(1) = rectangle('position',[0 1 2 1],'facecolor', 'b');
 car(2) = rectangle('position',[6 2 2.5 1],'facecolor', 'b');
-car(3) = rectangle('position',[4 3 1.5 1],'facecolor', 'b');
-car(4) = rectangle('position',[10 1 2 1],'facecolor', 'b');
-car(5) = rectangle('position',[14 3 1.5 1],'facecolor', 'b');
+
+car(3) = rectangle('position',[11 3 1.5 1],'facecolor', 'b');
+car(4) = rectangle('position',[4 3 1.5 1],'facecolor', 'b');
+car(5) = rectangle('position',[15 1 2 1],'facecolor', 'b');
 
 
 
@@ -234,7 +241,7 @@ car(5) = rectangle('position',[14 3 1.5 1],'facecolor', 'b');
 
 %  for n=1:length(r(:,1))
 
-while A==1
+while gameover == 0
     
     pause(0.001)
     
@@ -269,31 +276,69 @@ while A==1
         
         
         
-        if  distY<1/10 && distX<(carpos1(3)/2 + 1/60);
+        if  distY<1/100 && distX<(carpos1(3)/2 + 1/100)
+            gameover = 1;
+            Lose()
             
-            youlose = text(0,3,{'You Lose!'},'color','r','fontsize',70);
-            set(youlose,'visible','on');
             
-            A=0
             
-            set(fig1,'KeyPressFcn','')
-            
-            pause(5)
         end
+        
     end
     
+    
+    
+    
+    
     if poscowY >= 4
+        gameover = 1 ;
+        Win()
         
-        youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
-        set(youwin,'visible','on');
         
-        A=0
         
-        set(fig1,'KeyPressFcn','')
-        pause(5)
+        
+        
+        
     end
 end
+    
+function youwin1()
+    youwin = text(0,3,{'You Win!'},'color','r','fontsize',145);
+    set(youwin,'visible','on');
+end    
+function youlose1()
+    youlose = text(0,3,{'You Lose.'},'color','m','fontsize',130);
+    set(youlose,'visible','on');
 end
 
+    function Lose()
+         set(fig1,'KeyPressFcn',@Nokeys)
+         [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
+         sound(Carhit, Carhit_fps);
+         %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
+         pause(2)
+            
+         youlose1()    
+         pause(1.5)
+         delete(gca)
+         close(fig1)  
+    end
+
+    function Win()
+        set(fig1,'KeyPressFcn',@Nokeys)
+       
+        [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
+        sound(CheerSound, Cheer_fps);    
+        %https://www.freesoundeffects.com/free-track/cheer2-426825/
+        youwin1()
+        pause(4)
+        delete(gca)
+        close(fig1) 
+    end
 
 
+
+
+
+
+end
