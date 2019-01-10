@@ -2,7 +2,7 @@ function Hardmode()
 %Creates figure for game.
 fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900]);
 
-%Figure Boundary limits
+%Figure Boundary limits.
 xlim([0 10])
 ylim([0 5])
 
@@ -34,7 +34,7 @@ rectangle('position',[-1 3.45 2 0.1],'facecolor','y')
 rectangle('position',[3 3.45 2 0.1],'facecolor','y')
 rectangle('position',[7 3.45 2 0.1],'facecolor','y')
 
-%Turn off axis
+%Turn off axis.
 axis off
 
 %Gameover flag.
