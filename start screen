@@ -1,4 +1,4 @@
-function mytemps
+function startscreen
 
 f = figure;
 
@@ -62,7 +62,7 @@ c = uicontrol(f,'Style','popupmenu');
 
 c.Position = [400 80 85 10];
 
-c.String = {'Select','Easy','Hard'};
+c.String = {'Select','Easy','Hard','Hardest','Chaos'};
 
 c.Callback = @selection;
 
@@ -80,20 +80,39 @@ c.Callback = @selection;
     end
 while a == 0
     
-diff = get(c,'Value')
-disp(diff)
+diff = get(c,'Value');
 pause(0.5)
 if diff(1) == 2
-    display('Easy')
-  pause(0.5)    
-    Alexgame()
+    display('Easy mode initiating...')
+    pause(1)
+    close(f)
+    pause(0.5)
+    Easymode()
     a = 1
 
 elseif diff(1) == 3
-    display('Hard')
-  pause(0.5)    
-    Alexgame()
+    display('Hard mode initiating...')
+    pause(1)
+    close(f)
+    pause(0.5)
+    Hardmode()
     a = 1
+    
+elseif diff(1) == 4
+    display('Hardest mode initiating...')
+    pause(1)
+    close(f)
+    pause(0.5)
+    Hardestmode()
+    a = 1
+
+%elseif diff(1) == 5
+%    display('Chaos mode initiating...')
+ %   pause(1)
+ %   close(f)
+ %   pause(0.5)
+ %   Chaosmode()
+ %   a = 1    
 end
 end
 end
