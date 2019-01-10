@@ -1,10 +1,6 @@
 function Hardmode()
 %Creates figure for game.
-fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900]);
-
-%Figure Boundary limits.
-xlim([0 10])
-ylim([0 5])
+fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900],'closereq', @Closefig);
 
 %Start grass.
 rectangle('position',[0 -0.1 10 1],'facecolor',[0 0.5,0])
@@ -49,6 +45,11 @@ cow = patch(xRana,yRana,'y','edgecolor','b');
 poscowX = get(cow,'XData');
 poscowY = get(cow,'YData');
 
+%http://www.classicgaming.cc/classics/frogger/sounds
+[Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
+[Bg, Bg_fps] = audioread('Bg.mp3'); % THIS IS A PLACEHOLDER
+sound(Bg, Bg_fps);
+
 %%
 function presskeys(varargin)              
 
@@ -82,6 +83,10 @@ function presskeys(varargin)
     set(cow,'Ydata',poscowY,'XData',poscowX);                     
 end
 %%
+%Figure Boundary limits
+xlim([0 10])
+ylim([0 5])
+
 %Used for random car colours.
 colorarray = {'y','m','c','r','b','g'};
 col = length(colorarray);
@@ -104,7 +109,7 @@ rand3 = 0.02+0.03*rand();
 function speed2()
 while over==0
     %Sets a fixed refresh rate for the game.
-    pause(0.0025)
+    pause(0.003)
     
     %Get X position of each car every 0.01s.
     carpos1 = get(car(1),'position');
@@ -322,8 +327,16 @@ function Win()
     youwin1()
     pause(4)
     delete(gca)
-    close(fig1)    
+    delete(fig1)    
 end
+
+%Close figure before win/loss state.
+function Closefig(varargin)
+    clear sound
+    delete(gca)
+    delete(fig1)
+end
+
 
 %Lose State.
 function Lose()
@@ -336,6 +349,6 @@ function Lose()
     youlose1() 
     pause(1)
     delete(gca)
-    close (fig1)
+    delete(fig1)
 end
 end
