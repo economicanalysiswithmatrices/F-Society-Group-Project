@@ -2,7 +2,7 @@ function Easymode()
 %Creates figure for game.
 fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900]);
 
-%Figure Boundary limits
+%Figure Boundary limits.
 xlim([0 10])
 ylim([0 5])
 
