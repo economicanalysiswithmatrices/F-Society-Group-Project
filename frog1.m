@@ -225,7 +225,7 @@ A=1
 
 
 
-car(1) = rectangle('position',[2 1 2 1],'facecolor', 'b');
+car(1) = rectangle('position',[4 1 2 1],'facecolor', 'b');
 
 car(2) = rectangle('position',[7 2 4 1],'facecolor', 'b');
 
@@ -241,7 +241,7 @@ car(3) = rectangle('position',[3 3 2 1],'facecolor', 'b');
 
 while A==1
 
-    pause(0.002)
+    pause(0.001)
 
     
 
@@ -249,11 +249,11 @@ while A==1
 
         carpos1 = get(car(n),'position');
 
-        carpos1(1) = carpos1(1) + 0.05;
+        carpos1(1) = carpos1(1) + 0.1;
 
    
         if carpos1(1)>10
-            carpos1(1)=-1.5
+            carpos1(1)=-4
         end
             
         set(car(n),'position',carpos1);
