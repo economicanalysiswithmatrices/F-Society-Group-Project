@@ -61,15 +61,22 @@ end
 xlim([0 10])
 ylim([0 5])
 
-car(1) = rectangle('position',[0 1 1 1],'facecolor', 'b');
-car(2) = rectangle('position',[5 2 3 1],'facecolor', 'b');
-car(3) = rectangle('position',[3 3 1.5 1],'facecolor', 'b');
+%car(1) = rectangle('position',[0 1 1 1],'facecolor', 'b');
+%car(2) = rectangle('position',[5 2 3 1],'facecolor', 'b');
+%car(3) = rectangle('position',[3 3 1.5 1],'facecolor', 'b');
+car(1) = rectangle('position',[3 1 2 1],'facecolor', 'b');
+car(2) = rectangle('position',[6 2 2.5 1],'facecolor', 'b');
+car(3) = rectangle('position',[7 3 1.5 1],'facecolor', 'b');
+car(4) = rectangle('position',[4 3 1.5 1],'facecolor', 'b');
+car(5) = rectangle('position',[15 1 2 1],'facecolor', 'b');
 
 while over==0
     pause(0.01)
     carpos1 = get(car(1),'position');
     carpos2 = get(car(2),'position');
     carpos3 = get(car(3),'position');
+    carpos4 = get(car(4),'position');
+    carpos5 = get(car(5),'position');
     
     poscowY = get(cow,'YData');
     if poscowY > 3
@@ -82,7 +89,7 @@ while over==0
         set(car(1),'position',carpos1);
     
     elseif carpos1(1) < 10
-        carpos1 = get(car(1),'position');      % This line might not be necessary for our code
+        %carpos1 = get(car(1),'position');      % This line might not be necessary for our code
         carpos1(1) = carpos1(1) + 0.03;
         set(car(1),'position',carpos1);
     end
@@ -97,7 +104,7 @@ while over==0
         set(car(2),'position',carpos2);       
     end
 
-    if carpos3(1) > 10   
+    if carpos3(1) > 10
         carpos3(1) = -2;
         set(car(3),'position',carpos3);
     
@@ -107,6 +114,25 @@ while over==0
         set(car(3),'position',carpos3);
     end
     
+    if carpos4(1) > 10
+        carpos4(1) = -2;
+        set(car(4),'position',carpos4);
+    
+    elseif carpos4(1) < 10
+        %carpos3 = get(car(3),'position');
+        carpos4(1) = carpos4(1) + 0.05;
+        set(car(4),'position',carpos4);
+    end
+    
+    if carpos5(1) > 10
+        carpos5(1) = -2;
+        set(car(5),'position',carpos5);
+    
+    elseif carpos5(1) < 10
+        %carpos3 = get(car(3),'position');
+        carpos5(1) = carpos5(1) + 0.03;
+        set(car(5),'position',carpos5);
+    end
     Xdist1 = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
     Ydist1 = abs(carpos1(2)-poscowY(1));
     
@@ -125,6 +151,20 @@ while over==0
     Ydist3 = abs(carpos3(2)-poscowY(1));
     
     if  Ydist3<1/100 && Xdist3<(carpos3(3)/2)
+        Lose()
+    end
+    
+    Xdist4 = abs((carpos4(1)+carpos4(3)/2)-(poscowX(1)));
+    Ydist4 = abs(carpos4(2)-poscowY(1));
+    
+    if  Ydist1<1/100 && Xdist1<(carpos1(3)/2)
+        Lose()
+    end
+    
+    Xdist5 = abs((carpos5(1)+carpos5(3)/2)-(poscowX(1)));
+    Ydist5 = abs(carpos5(2)-poscowY(1));
+    
+    if  Ydist1<1/100 && Xdist1<(carpos5(3)/2)
         Lose()
     end
     
@@ -171,7 +211,6 @@ function Lose()
 end
 
 end
-
     
 
     
