@@ -58,25 +58,29 @@ function presskeys(varargin)
                 
         case 'uparrow'                             
                 poscowY = poscowY+1; 
+                 sound(Hop, Hop_fps);
                 
         case 'downarrow'
             %Makes sure frog stays inside playing area.
             if poscowY>0                    
-                poscowY = poscowY-1;                    
+                poscowY = poscowY-1; 
+                 sound(Hop, Hop_fps);
             end
 
         case 'rightarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
             if poscowX <8.5                    
-                poscowX = poscowX+0.5;                    
+                poscowX = poscowX+0.5;  
+                 sound(Hop, Hop_fps);
             end                                             
 
         case 'leftarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
             if poscowX>1                    
-                poscowX = poscowX-0.5;                    
+                poscowX = poscowX-0.5;   
+                 sound(Hop, Hop_fps);
             end
     end
     %Sets new Frog position after every arrow key movement.
