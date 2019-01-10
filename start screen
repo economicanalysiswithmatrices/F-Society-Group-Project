@@ -16,7 +16,7 @@ rectangle('position',[0 4 10 1],'facecolor','g')
  Howtoplay = text(0.75,1,{'How To Play'},'color','m','fontsize',18);
  crossroad = text(0.5,0.5,{'Cross the road without getting hit.'},'color','w','fontsize',12);
  arrowkeys = text(0.5,0.25,{'Use arrow keys to move.'},'color','w','fontsize',12);
- title = text(3.25,4.5,{'FroggR'},'color','k','fontsize',30,'fontweight','bold'))
+ title = text(3.25,4.5,{'FroggR'},'color','k','fontsize',30,'fontweight','bold')
 Difficulty = text(6.5,1,{'Choose Difficulty'},'color','r','fontsize',15);
 
 xRana = 3.5+ 40.*[0.0 0.4 0.4 0.2 0.4 0.6 0.8 0.6 0.6 1.0 0.8  1.0 0.8 0.7 0.9 0.8 0.9   0.83 0.8 0.7 0.3 0.2   0.16 0.1 0.2 0.1 0.3 0.2 0.0 0.2]/16;
