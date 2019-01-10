@@ -157,14 +157,14 @@ while over==0
     Xdist4 = abs((carpos4(1)+carpos4(3)/2)-(poscowX(1)));
     Ydist4 = abs(carpos4(2)-poscowY(1));
     
-    if  Ydist1<1/100 && Xdist1<(carpos1(3)/2)
+    if  Ydist4<1/100 && Xdist4<(carpos1(3)/2)
         Lose()
     end
     
     Xdist5 = abs((carpos5(1)+carpos5(3)/2)-(poscowX(1)));
     Ydist5 = abs(carpos5(2)-poscowY(1));
     
-    if  Ydist1<1/100 && Xdist1<(carpos5(3)/2)
+    if  Ydist5<1/100 && Xdist5<(carpos5(3)/2)
         Lose()
     end
     
