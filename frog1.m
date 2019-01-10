@@ -90,125 +90,125 @@ poscowY = get(cow,'YData')
 
 
     function presskeys(varargin)
-
         
-
+        
+        
         poscowX = get(cow,'XData')%searching for position of cow on the board
-
         
-
+        
+        
         poscowY = get(cow,'YData')
-
         
-
+        
+        
         display(poscowX)
-
         
-
+        
+        
         display(poscowY)
-
         
-
         
-
         
-
+        
+        
+        
+        
         switch varargin{2}.Key
-
             
-
+            
+            
             case 'uparrow'
-
                 
-
+                
+                
                 if poscowY<4
-
                     
-
+                    
+                    
                     poscowY = poscowY+1
-
                     
-
+                    
+                    
                 end
-
                 
-
                 
-
                 
-
                 
-
                 
-
+                
+                
+                
+                
+                
+                
             case 'downarrow'
-
                 
-
+                
+                
                 if poscowY>0
-
                     
-
+                    
+                    
                     poscowY = poscowY-1
-
                     
-
+                    
+                    
                 end
-
                 
-
+                
+                
             case 'rightarrow'
-
                 
-
+                
+                
                 if poscowX <8.5
-
                     
-
+                    
+                    
                     poscowX = poscowX+1
-
                     
-
+                    
+                    
                 end
-
                 
-
                 
-
                 
-
+                
+                
+                
+                
             case 'leftarrow'
-
                 
-
+                
+                
                 if poscowX>1
-
                     
-
+                    
+                    
                     poscowX = poscowX-1
-
                     
-
+                    
+                    
                 end
-
                 
-
                 
-
                 
-
+                
+                
+                
+                
         end
-
         
-
+        
+        
         set(cow,'Ydata',poscowY,'XData',poscowX)
-
         
-
         
-
         
-
+        
+        
+        
+        
     end
 
 
@@ -225,11 +225,13 @@ A=1
 
 
 
-car(1) = rectangle('position',[4 1 2 1],'facecolor', 'b');
+car(1) = rectangle('position',[3 1 2 1],'facecolor', 'b');
 
-car(2) = rectangle('position',[7 2 4 1],'facecolor', 'b');
+car(2) = rectangle('position',[6 2 2.5 1],'facecolor', 'b');
 
-car(3) = rectangle('position',[3 3 2 1],'facecolor', 'b');
+car(3) = rectangle('position',[11 3 1.5 1],'facecolor', 'b');
+car(4) = rectangle('position',[4 3 1.5 1],'facecolor', 'b');
+car(5) = rectangle('position',[15 1 2 1],'facecolor', 'b');
 
 
 
@@ -240,62 +242,73 @@ car(3) = rectangle('position',[3 3 2 1],'facecolor', 'b');
 %  for n=1:length(r(:,1))
 
 while A==1
-
-    pause(0.001)
-
     
-
+    pause(0.001)
+    
+    
+    
     for n = 1:length(car(:))
-
+        
         carpos1 = get(car(n),'position');
-
+        
         carpos1(1) = carpos1(1) + 0.1;
-
-   
+        
+        
         if carpos1(1)>10
             carpos1(1)=-4
         end
-            
-        set(car(n),'position',carpos1);
-
-        drawnow
-
         
-
-       
-
-    
-
-
-
-    distX = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
-
-    distY = abs(carpos1(2)-poscowY(1));
-
-    
-
-    if  distY<1/20 && distX<(carpos1(3)/2 + 1/60);
-
-        then clear fgr 
-
-          nx = n;
-
+        set(car(n),'position',carpos1);
+        
+        drawnow
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        distX = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
+        
+        distY = abs(carpos1(2)-poscowY(1));
+        
+        
+        
+        if  distY<1/20 && distX<(carpos1(3)/2 + 1/60);
+            
+            youlose = text(0,3,{'You Lose!'},'color','r','fontsize',70);
+            set(youlose,'visible','on');
+            A=0
+            set(fig1,'KeyPressFcn','')
+            pause(5)
+            
+            
+            
+        end
+        
     end
-
+    
+    
+    
+    
+    
+    if poscowY >= 4
+        
+        youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
+        set(youwin,'visible','on');
+        A=0
+        set(fig1,'KeyPressFcn','')
+        pause(5)
+        
+        
+        
+        
+        
+        
     end
-
-   
-
-     
-
-     if poscowY >= 4 
-
-        pause (1)
-
-         then clear fgr
-
-     end
-
+    
 end
 
 
