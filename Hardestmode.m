@@ -1,6 +1,6 @@
 function Hardestmode()
 %Creates figure for game.
-fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900]);
+fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900],'closereq', @Closefig);
 
 %Figure Boundary limits.
 xlim([0 10])
@@ -66,7 +66,7 @@ poscowY = get(cow,'YData');
 
 %http://www.classicgaming.cc/classics/frogger/sounds
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
-[Bg, Bg_fps] = audioread('bg.mp3'); % THIS IS A PLACEHOLDER
+[Bg, Bg_fps] = audioread('Super Mario Bros (NES) Music - Underground Theme.mp3');
 sound(Bg, Bg_fps);
 
 %%
@@ -430,18 +430,18 @@ while over==0
     
       %%%Car 12%%%
     
-    %Gets X and Y distance of Frog from Car 6.
+    %Gets X and Y distance of Frog from Car 12.
     %abs() get modulus of distance.
     Xdist12 = abs((carpos12(1)+carpos12(3)/2)-(poscowX(1)));
     Ydist12 = abs(carpos12(2)-poscowY(1));    
     
-    %When Car 6 exits the screen.
+    %When Car 12 exits the screen.
     if carpos12(1) < -2
         carpos12(1) = 12;
         randicol = colorarray{randi(col)};
         set(car(12),'position',carpos12,'facecolor',randicol);                      
     
-    %Causes Car 6 to move every 0.01s.   
+    %Causes Car 12 to move every 0.01s.   
     elseif carpos12(1) > -2        
         carpos12(1) = carpos12(1) - rand5;
         set(car(12),'position',carpos12);
@@ -485,12 +485,20 @@ function Win()
     youwin1()
     pause(4)
     delete(gca)
-    close(fig1)    
+    delete(fig1)    
+end
+
+%Close figure before win/loss state.
+function Closefig(varargin)
+    clear sound
+    delete(gca)
+    delete(fig1)
 end
 
 %Lose State.
 function Lose()
     set(fig1,'KeyPressFcn',@Nokeys)
+    clear sound
     [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
     sound(Carhit, Carhit_fps);
     %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
@@ -498,7 +506,6 @@ function Lose()
     over = 1;   
     youlose1() 
     pause(1)
-    delete(gca)
-    close (fig1)
+    delete(fig1)    
 end
 end
