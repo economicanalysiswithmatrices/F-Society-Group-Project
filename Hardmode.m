@@ -101,7 +101,7 @@ rand2 = 0.02+0.03*rand();
 rand3 = 0.02+0.03*rand();
 
 %%
-function speed1()
+function speed2()
 while over==0
     %Sets a fixed refresh rate for the game.
     pause(0.0025)
@@ -293,7 +293,7 @@ while over==0
 end
 end
 %Calls above function.
-speed1()
+speed2()
 
 %%
 %'You Win!' text appears on win state.
