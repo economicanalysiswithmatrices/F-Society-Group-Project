@@ -328,5 +328,7 @@ function Lose()
     pause(2)
     over = 1;   
     youlose1()  
+    delete(gca)
+    close(fig1)
 end
 end
