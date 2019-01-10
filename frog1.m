@@ -165,7 +165,7 @@ poscowY = get(cow,'YData')
                     
                     
                     
-                    poscowX = poscowX+1
+                    poscowX = poscowX+0.5
                     
                     
                     
@@ -185,7 +185,7 @@ poscowY = get(cow,'YData')
                     
                     
                     
-                    poscowX = poscowX-1
+                    poscowX = poscowX-0.5
                     
                     
                     
@@ -278,15 +278,15 @@ while A==1
             
             youlose = text(0,3,{'You Lose!'},'color','r','fontsize',70);
             set(youlose,'visible','on');
-           
+            
             A=0
             
             set(fig1,'KeyPressFcn','')
             
-            pause(5) 
-        end        
+            pause(5)
+        end
     end
- 
+    
     if poscowY >= 4
         
         youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
@@ -295,7 +295,7 @@ while A==1
         A=0
         
         set(fig1,'KeyPressFcn','')
-        pause(5)     
+        pause(5)
     end
 end
 end
