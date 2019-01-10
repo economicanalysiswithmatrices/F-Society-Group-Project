@@ -47,8 +47,8 @@ poscowY = get(cow,'YData');
 
 %http://www.classicgaming.cc/classics/frogger/sounds
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
-[Bg, Bg_fps] = audioread('Bg.mp3'); % THIS IS A PLACEHOLDER
-sound(Bg, Bg_fps);
+%[Bg, Bg_fps] = audioread('Bg.mp3'); % THIS IS A PLACEHOLDER
+%sound(Bg, Bg_fps);
 
 %%
 function presskeys(varargin)              
