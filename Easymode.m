@@ -2,6 +2,10 @@ function Easymode()
 %Creates figure for game.
 fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900]);
 
+%Figure Boundary limits
+xlim([0 10])
+ylim([0 5])
+
 %Start grass.
 rectangle('position',[0 -0.1 10 1],'facecolor',[0 0.5,0])
 
@@ -78,10 +82,6 @@ function presskeys(varargin)
     set(cow,'Ydata',poscowY,'XData',poscowX);                     
 end
 %%
-%Figure Boundary limits
-xlim([0 10])
-ylim([0 5])
-
 %Used for random car colours.
 colorarray = {'y','m','c','r','b','g'};
 col = length(colorarray);
