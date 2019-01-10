@@ -46,12 +46,12 @@ function presskeys(varargin)
                 
         case 'rightarrow'                
             if poscowX <8.5                    
-                poscowX = poscowX+1;                    
+                poscowX = poscowX+0.5;                    
             end               
                                
         case 'leftarrow'                
             if poscowX>1                    
-                poscowX = poscowX-1;                    
+                poscowX = poscowX-0.5;                    
             end
     end
     set(cow,'Ydata',poscowY,'XData',poscowX)                      
