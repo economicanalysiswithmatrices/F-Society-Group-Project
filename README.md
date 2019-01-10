@@ -1,11 +1,12 @@
 # F-Society-Group-Project
-Download - startscreen.m 
-         - Easymode.m
-         - Hardmode.m
-         - Hardestmode.m
-         - carstarthonkbackfire.mp3
-         - cheer2.mp3
-         - sound-frogger-hop.wav
+Download 
+- startscreen.m 
+- Easymode.m
+- Hardmode.m
+- Hardestmode.m
+- carstarthonkbackfire.mp3
+- cheer2.mp3
+- sound-frogger-hop.wav
          
 Start game using startscreen.m
 
