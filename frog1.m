@@ -303,14 +303,15 @@ while gameover == 0
 end
     
 function youwin1()
-    youwin = text(0,3,{'You Win!'},'color','r','fontsize',145);
+    youwin = text(0,3,{'You Win!'},'color','r','fontsize',80);
     set(youwin,'visible','on');
 end    
 function youlose1()
-    youlose = text(0,3,{'You Lose.'},'color','m','fontsize',130);
+    youlose = text(0,3,{'You Lose.'},'color','m','fontsize',70);
     set(youlose,'visible','on');
 end
-
+function Nokeys(~,~)
+end  
     function Lose()
          set(fig1,'KeyPressFcn',@Nokeys)
          [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
