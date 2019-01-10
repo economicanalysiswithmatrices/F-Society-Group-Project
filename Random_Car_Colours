@@ -132,15 +132,15 @@ col = length(colorarray)
 randicol = colorarray{randi(col)}
 
 
-car(1) = rectangle('position',[3 1 2 1],'facecolor', randicol);
+car(1) = rectangle('position',[3 1 2 1],'facecolor', 'r');
 
-car(2) = rectangle('position',[6 2 2.5 1],'facecolor', randicol);
+car(2) = rectangle('position',[6 2 2.5 1],'facecolor', 'b');
 
-car(3) = rectangle('position',[7 3 1.5 1],'facecolor', randicol);
+car(3) = rectangle('position',[7 3 1.5 1],'facecolor', 'c');
 
-car(4) = rectangle('position',[4 3 1.5 1],'facecolor', randicol);
+car(4) = rectangle('position',[4 3 1.5 1],'facecolor', 'w');
 
-car(5) = rectangle('position',[15 1 2 1],'facecolor', randicol);
+car(5) = rectangle('position',[15 1 2 1],'facecolor', 'g');
 
 rand1 = 0.002+0.01*rand();
 
