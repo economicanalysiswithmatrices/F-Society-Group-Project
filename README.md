@@ -17,11 +17,9 @@ Use the arrow keys to move the frog.
 
 There are four difficulties to choose from.
 1. Easy - Easiest mode made for beginners.
-2. Hard - A harder version of easy mode, ......
-3. Hardest mode - A mode to truly challenge the player.
+2. Hard - More cars, faster cars, can you handle it?
+3. Hardest mode - More cars, faster cars and more lanes? This mode truly challenges the player.
 4. Chaos mode - For those who think they can accomplish the impossible (Epilepsy warning).
-
-
 
 Note: Some of the audio which we are yet to add has been commented out
 
