@@ -69,17 +69,17 @@ function presskeys(varargin)
 
         case 'rightarrow'
             %Makes sure frog stays inside playing area.
-            %Larger movement per arrow key hit than Hard or Chaos mode.
+            %Larger movement per horizontal arrow key hit than Hard, Hardest or Chaos mode.
             if poscowX <8.5                    
-                poscowX = poscowX+0.5;  
+                poscowX = poscowX+1;  
                  sound(Hop, Hop_fps);
             end                                             
 
         case 'leftarrow'
             %Makes sure frog stays inside playing area.
-            %Larger movement per arrow key hit than Hard or Chaos mode.
+            %Larger movement per horizontal arrow key hit than Hard, Hardest or Chaos mode.
             if poscowX>1                    
-                poscowX = poscowX-0.5;   
+                poscowX = poscowX-1;   
                  sound(Hop, Hop_fps);
             end
     end
@@ -279,6 +279,7 @@ end
 function Win()
     set(fig1,'KeyPressFcn',@Nokeys)
     over = 1;
+    %Stops background sound
     clear sound
     [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
     sound(CheerSound, Cheer_fps);    
@@ -305,7 +306,7 @@ function Lose()
     [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
     sound(Carhit, Carhit_fps);
     %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
-    pause(2)
+    pause(2)    
     over = 1;   
     youlose1() 
     pause(1)
