@@ -3,7 +3,7 @@ function Chaosmode()
 fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900],'closereq', @Closefig);
 
 %No boundary around game
-axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 5])
+axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 8])
 
 %Start grass.
 rectangle('position',[0 -0.1 10 1],'facecolor',[0 0.5,0])
@@ -131,7 +131,7 @@ car(12) = rectangle('position',[6 6 1.5 0.9],'facecolor', 'y','edgecolor','w','l
 
 
 %%
-function speed3()
+function speed4()
 while over==0
     %Sets a fixed refresh rate for the game.
     pause(0.05)
