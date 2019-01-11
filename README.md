@@ -33,5 +33,6 @@ Things to do:
 - CHANGE NAME OF COW TO FROG
 - Change Win and lose text to something readable on every colour car
 - Change Win and lose font?
+- Use 'You win' and 'You lose' images instead?
 
 
