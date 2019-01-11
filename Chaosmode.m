@@ -252,7 +252,7 @@ while over==0
 end
 end
 %Calls above function.
-speed3()
+speed4()
 
 %%
 %'You Win!' text appears on win state.
