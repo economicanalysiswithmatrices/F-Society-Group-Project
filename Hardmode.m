@@ -42,16 +42,16 @@ over = 0;
 %Creating the Frog, Credit: Gustavo Rodriguez.
 xRana = 4.5+ 15.*[0.0 0.4 0.4 0.2 0.4 0.6 0.8 0.6 0.6 1.0 0.8  1.0 0.8 0.7 0.9 0.8 0.9   0.83 0.8 0.7 0.3 0.2   0.16 0.1 0.2 0.1 0.3 0.2 0.0 0.2]/16;
 yRana = 15.*[0.0 0.0 0.1 0.4 0.1 0.1 0.4 0.1 0.0 0.0 0.1  0.4 0.5 0.4 0.6 0.8 0.9   0.93 1.0 0.9 0.9 1.0   0.93 0.9 0.8 0.6 0.4 0.5 0.4 0.1]/16;
-cow = patch(xRana,yRana,'y','edgecolor','b');
+frog = patch(xRana,yRana,'y','edgecolor','b');
 
 %Searches for initial position of frog on the board.
-poscowX = get(cow,'XData');
-poscowY = get(cow,'YData');
+posfrogX = get(frog,'XData');
+posfrogY = get(frog,'YData');
 
 %http://www.classicgaming.cc/classics/frogger/sounds
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
-%[Bg, Bg_fps] = audioread('Bg.mp3'); % THIS IS A PLACEHOLDER
-%sound(Bg, Bg_fps);
+[Bg, Bg_fps] = audioread('Super Mario Bros (NES) Music - Underground Theme.mp3'); % THIS IS A PLACEHOLDER
+sound(Bg, Bg_fps);
 
 %%
 function presskeys(varargin)              
@@ -60,37 +60,40 @@ function presskeys(varargin)
     switch varargin{2}.Key
                 
         case 'uparrow'                             
-                poscowY = poscowY+1;
+                posfrogY = posfrogY+1; 
                  sound(Hop, Hop_fps);
                 
         case 'downarrow'
             %Makes sure frog stays inside playing area.
-            if poscowY>0                    
-                poscowY = poscowY-1;
+            if posfrogY>0                    
+                posfrogY = posfrogY-1;   
                  sound(Hop, Hop_fps);
             end
 
         case 'rightarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
-            if poscowX <8.5                    
-                poscowX = poscowX+0.5;  
+            if posfrogX <8.5                    
+                posfrogX = posfrogX+0.5; 
                  sound(Hop, Hop_fps);
             end                                             
 
         case 'leftarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
-            if poscowX>1                    
-                poscowX = poscowX-0.5;
+            if posfrogX>1                    
+                posfrogX = posfrogX-0.5; 
                  sound(Hop, Hop_fps);
             end
     end
     %Sets new Frog position after every arrow key movement.
-    set(cow,'Ydata',poscowY,'XData',poscowX);                     
+    set(frog,'Ydata',posfrogY,'XData',posfrogX);                     
 end
-
 %%
+%Figure Boundary limits
+xlim([0 10])
+ylim([0 5])
+
 %Used for random car colours.
 colorarray = {'y','m','c','r','b','g'};
 col = length(colorarray);
@@ -125,10 +128,10 @@ while over==0
     carpos7 = get(car(7),'position');
     
     %Gets Y position of frog for collisions.
-    poscowY = get(cow,'YData');
+    posfrogY = get(frog,'YData');
     
     %When frog reaches greener grass.
-    if poscowY > 3
+    if posfrogY > 3
         Win()
         break
     end     
@@ -137,8 +140,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 1.
     %abs() get modulus of distance.
-    Xdist1 = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
-    Ydist1 = abs(carpos1(2)-poscowY(1));    
+    Xdist1 = abs((carpos1(1)+carpos1(3)/2)-(posfrogX(1)));
+    Ydist1 = abs(carpos1(2)-posfrogY(1));    
     
     %When car 1 exits the screen.
     if carpos1(1) > 10   
@@ -162,8 +165,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 2.
     %abs() get modulus of distance.
-    Xdist2 = abs((carpos2(1)+carpos2(3)/2)-(poscowX(1)));
-    Ydist2 = abs(carpos2(2)-poscowY(1));           
+    Xdist2 = abs((carpos2(1)+carpos2(3)/2)-(posfrogX(1)));
+    Ydist2 = abs(carpos2(2)-posfrogY(1));           
     
     %When Car 2 exits the screen.
     if carpos2(1) > 10   
@@ -187,8 +190,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 3.
     %abs() get modulus of distance.
-    Xdist3 = abs((carpos3(1)+carpos3(3)/2)-(poscowX(1)));
-    Ydist3 = abs(carpos3(2)-poscowY(1));    
+    Xdist3 = abs((carpos3(1)+carpos3(3)/2)-(posfrogX(1)));
+    Ydist3 = abs(carpos3(2)-posfrogY(1));    
    
     %When Car 3 exits the screen.
     if carpos3(1) > 10
@@ -212,8 +215,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 4.
     %abs() get modulus of distance.
-    Xdist4 = abs((carpos4(1)+carpos4(3)/2)-(poscowX(1)));
-    Ydist4 = abs(carpos4(2)-poscowY(1));    
+    Xdist4 = abs((carpos4(1)+carpos4(3)/2)-(posfrogX(1)));
+    Ydist4 = abs(carpos4(2)-posfrogY(1));    
     
     %When Car 4 exits the screen.
     if carpos4(1) > 10
@@ -229,7 +232,7 @@ while over==0
     
      %If there is a collision.
     if Ydist4<1/100 && Xdist4<(carpos1(3)/2)
-        Lose()   
+        Lose() 
         break
     end
     
@@ -237,8 +240,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 5.
     %abs() get modulus of distance.
-    Xdist5 = abs((carpos5(1)+carpos5(3)/2)-(poscowX(1)));
-    Ydist5 = abs(carpos5(2)-poscowY(1));    
+    Xdist5 = abs((carpos5(1)+carpos5(3)/2)-(posfrogX(1)));
+    Ydist5 = abs(carpos5(2)-posfrogY(1));    
     
     %When Car 5 exits the screen.
     if carpos5(1) > 10
@@ -262,8 +265,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 6.
     %abs() get modulus of distance.
-    Xdist6 = abs((carpos6(1)+carpos6(3)/2)-(poscowX(1)));
-    Ydist6 = abs(carpos6(2)-poscowY(1));    
+    Xdist6 = abs((carpos6(1)+carpos6(3)/2)-(posfrogX(1)));
+    Ydist6 = abs(carpos6(2)-posfrogY(1));    
     
     %When Car 6 exits the screen.
     if carpos6(1) > 10
@@ -287,8 +290,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 7.
     %abs() get modulus of distance.
-    Xdist7 = abs((carpos7(1)+carpos7(3)/2)-(poscowX(1)));
-    Ydist7 = abs(carpos7(2)-poscowY(1));           
+    Xdist7 = abs((carpos7(1)+carpos7(3)/2)-(posfrogX(1)));
+    Ydist7 = abs(carpos7(2)-posfrogY(1));           
     
     %When Car 7 exits the screen.
     if carpos7(1) > 10   
@@ -340,13 +343,13 @@ function Win()
     youwin1()
     pause(4)
     delete(gca)
-    delete(fig1) 
-    Frogger()
+    delete(fig1)
+    startscreen()
 end
 
 %Close figure before win/loss state.
 function Closefig(varargin)
-    clear sound
+    clear sound   
     delete(gca)
     delete(fig1)
 end
@@ -365,6 +368,6 @@ function Lose()
     pause(1)
     delete(gca)
     delete(fig1)
-    Frogger()
+    startscreen()
 end
 end
