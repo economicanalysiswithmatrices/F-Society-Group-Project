@@ -1,4 +1,4 @@
-function startscreen
+function Frogger
 
 f = figure('menubar','none','closereq', @Closefig)
 
