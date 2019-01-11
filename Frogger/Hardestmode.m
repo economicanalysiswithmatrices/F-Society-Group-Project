@@ -2,9 +2,8 @@ function Hardestmode()
 %Creates figure for game.
 fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900],'closereq', @Closefig);
 
-%Figure Boundary limits.
-xlim([0 10])
-ylim([0 8])
+%No boundary around game.
+axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 8])
 
 %Start grass.
 rectangle('position',[0 -0.1 10 1],'facecolor',[0 0.5,0])
@@ -109,7 +108,9 @@ function presskeys(varargin)
     %Sets new Frog position after every arrow key movement.
     set(cow,'Ydata',poscowY,'XData',poscowX);                     
 end
+
 %%
+
 %Used for random car colours.
 colorarray = {'y','m','c','r','b','g'};
 col = length(colorarray);
