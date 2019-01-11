@@ -126,6 +126,7 @@ while over==0
     %When frog reaches greener grass.
     if poscowY > 3
         Win()
+        break
     end     
     
     %%%%Car 1%%%
@@ -150,6 +151,7 @@ while over==0
     %If there is a collision.    
     if Ydist1<1/10 && Xdist1<(carpos1(3)/2)
         Lose()
+        break
     end  
 
     %%%Car 2%%%
@@ -174,6 +176,7 @@ while over==0
     %If there is a collision.
     if Ydist2<1/100 && Xdist2<(carpos2(3)/2)
         Lose()
+        break
     end
 
     %%%Car 3%%%
@@ -198,6 +201,7 @@ while over==0
     %If there is a collision.     
     if Ydist3<1/100 && Xdist3<(carpos3(3)/2)
         Lose()
+        break
     end
     
     %%%Car 4%%%
@@ -221,7 +225,8 @@ while over==0
     
      %If there is a collision.
     if Ydist4<1/100 && Xdist4<(carpos1(3)/2)
-        Lose()   
+        Lose()
+        break
     end
     
     %%%Car 5%%%
@@ -246,6 +251,7 @@ while over==0
     %If there is a collision.    
     if Ydist5<1/100 && Xdist5<(carpos5(3)/2)
         Lose()
+        break
     end                                 
 end
 end
@@ -303,6 +309,6 @@ function Lose()
     youlose1() 
     pause(1)
     delete(gca)
-    close (fig1)
+    delete(fig1)
 end
 end
