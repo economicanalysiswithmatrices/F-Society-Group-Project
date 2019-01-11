@@ -59,18 +59,18 @@ function presskeys(varargin)
     %'Switch' case for arrow keys
     switch varargin{2}.Key
                 
-        case 'uparrow'                             
+        case 'w'                             
                 posfrogY = posfrogY+1; 
                  sound(Hop, Hop_fps);
                 
-        case 'downarrow'
+        case 's'
             %Makes sure frog stays inside playing area.
             if posfrogY>0                    
                 posfrogY = posfrogY-1;   
                  sound(Hop, Hop_fps);
             end
 
-        case 'rightarrow'
+        case 'd'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
             if posfrogX <8.5                    
@@ -78,7 +78,7 @@ function presskeys(varargin)
                  sound(Hop, Hop_fps);
             end                                             
 
-        case 'leftarrow'
+        case 'a'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
             if posfrogX>1                    
