@@ -1,7 +1,0 @@
-%music
-[y f]=audioread('');
-
-sound(pl);
-
-%Stop sound
-clear playsnd;
