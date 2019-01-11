@@ -57,16 +57,16 @@ over = 0;
 %Creating the Frog, Credit: Gustavo Rodriguez.
 xRana = 4.5+ 15.*[0.0 0.4 0.4 0.2 0.4 0.6 0.8 0.6 0.6 1.0 0.8  1.0 0.8 0.7 0.9 0.8 0.9   0.83 0.8 0.7 0.3 0.2   0.16 0.1 0.2 0.1 0.3 0.2 0.0 0.2]/16;
 yRana = 15.*[0.0 0.0 0.1 0.4 0.1 0.1 0.4 0.1 0.0 0.0 0.1  0.4 0.5 0.4 0.6 0.8 0.9   0.93 1.0 0.9 0.9 1.0   0.93 0.9 0.8 0.6 0.4 0.5 0.4 0.1]/16;
-cow = patch(xRana,yRana,'y','edgecolor','b');
+frog = patch(xRana,yRana,'y','edgecolor','b');
 
 %Searches for initial position of frog on the board.
-poscowX = get(cow,'XData');
-poscowY = get(cow,'YData');
+posfrogX = get(frog,'XData');
+posfrogY = get(frog,'YData');
 
 %http://www.classicgaming.cc/classics/frogger/sounds
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
-%[Bg, Bg_fps] = audioread('Bg.mp3');
-%sound(Bg, Bg_fps);
+[Bg, Bg_fps] = audioread('Super Mario Bros (NES) Music - Underground Theme.mp3');
+sound(Bg, Bg_fps);
 
 %%
 function presskeys(varargin)              
@@ -75,14 +75,14 @@ function presskeys(varargin)
     switch varargin{2}.Key
                 
         case 'uparrow'                             
-            poscowY = poscowY+1; 
+            posfrogY = posfrogY+1; 
             sound(Hop, Hop_fps);
 
                 
         case 'downarrow'
             %Makes sure frog stays inside playing area.
-            if poscowY>0                    
-                poscowY = poscowY-1;
+            if posfrogY>0                    
+                posfrogY = posfrogY-1;
                 sound(Hop, Hop_fps);
 
             end
@@ -90,8 +90,8 @@ function presskeys(varargin)
         case 'rightarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
-            if poscowX <9.5                    
-                poscowX = poscowX+0.5;
+            if posfrogX <9.5                    
+                posfrogX = posfrogX+0.5;
                 sound(Hop, Hop_fps);
 
             end                                             
@@ -99,14 +99,14 @@ function presskeys(varargin)
         case 'leftarrow'
             %Makes sure frog stays inside playing area.
             %Larger movement per arrow key hit than Hard or Chaos mode.
-            if poscowX>0                    
-                poscowX = poscowX-0.5; 
+            if posfrogX>0                    
+                posfrogX = posfrogX-0.5; 
                 sound(Hop, Hop_fps);
 
             end
     end
     %Sets new Frog position after every arrow key movement.
-    set(cow,'Ydata',poscowY,'XData',poscowX);                     
+    set(frog,'Ydata',posfrogY,'XData',posfrogX);                     
 end
 
 %%
@@ -123,12 +123,11 @@ car(12) = rectangle('position',[6 6 1.5 0.9],'facecolor', 'y','edgecolor','w','l
 
 
 %Random speed of cars upon game startup within a set range of values.
- rand1 = -1+9*rand();
- rand2 = -1.5.5+9*rand();
- rand3 = -1.5+9*rand();
- rand8 = -0.5+9*rand();
- rand12 = -0.75+9*rand();
-
+rand1 = -1.5+9*rand();
+rand2 = -1.5+9*rand();
+rand3 = -1.5+9*rand();
+rand8 = -1.5+9*rand();
+rand12 = -1.5+9*rand();
 
 %%
 function speed4()
@@ -145,16 +144,16 @@ while over==0
     
     %Random location of cars upon after every loop.
     rand1 = -1+9*rand();
-    rand2 = -1.5.5+9*rand();
+    rand2 = -1.5+9*rand();
     rand3 = -1.5+9*rand();
     rand8 = -0.5+9*rand();
-    rand12 = -0.75+9*rand();
+    rand12 = -0.5+9*rand();
     
     %Gets Y position of frog for collisions.
-    poscowY = get(cow,'YData');
+    posfrogY = get(frog,'YData');
     
     %When frog reaches greener grass.
-    if poscowY > 6
+    if posfrogY > 6
         Win()
         break
     end     
@@ -163,8 +162,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 1.
     %abs() get modulus of distance.
-    Xdist1 = abs((carpos1(1)+carpos1(3)/2)-(poscowX(1)));
-    Ydist1 = abs(carpos1(2)-poscowY(1));    
+    Xdist1 = abs((carpos1(1)+carpos1(3)/2)-(posfrogX(1)));
+    Ydist1 = abs(carpos1(2)-posfrogY(1));    
     
     %When car 1 exits the screen.    
     carpos1(1) = rand1;
@@ -181,8 +180,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 2.
     %abs() get modulus of distance.
-    Xdist2 = abs((carpos2(1)+carpos2(3)/2)-(poscowX(1)));
-    Ydist2 = abs(carpos2(2)-poscowY(1));           
+    Xdist2 = abs((carpos2(1)+carpos2(3)/2)-(posfrogX(1)));
+    Ydist2 = abs(carpos2(2)-posfrogY(1));           
     
     %When car 2 exits the screen.    
     carpos2(1) = rand2;
@@ -199,8 +198,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 3.
     %abs() get modulus of distance.
-    Xdist3 = abs((carpos3(1)+carpos3(3)/3)-(poscowX(1)));
-    Ydist3 = abs(carpos3(2)-poscowY(1));    
+    Xdist3 = abs((carpos3(1)+carpos3(3)/3)-(posfrogX(1)));
+    Ydist3 = abs(carpos3(2)-posfrogY(1));    
    
    %When car 3 exits the screen.    
     carpos3(1) = rand3;
@@ -217,8 +216,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 8.
     %abs() get modulus of distance.
-    Xdist8 = abs((carpos8(1)+carpos8(3)/2)-(poscowX(1)));
-    Ydist8 = abs(carpos8(2)-poscowY(1));    
+    Xdist8 = abs((carpos8(1)+carpos8(3)/2)-(posfrogX(1)));
+    Ydist8 = abs(carpos8(2)-posfrogY(1));    
     
    %When car 8 exits the screen.    
     carpos8(1) = rand8;
@@ -235,8 +234,8 @@ while over==0
     
     %Gets X and Y distance of Frog from Car 12.
     %abs() get modulus of distance.
-    Xdist12 = abs((carpos12(1)+carpos12(3)/2)-(poscowX(1)));
-    Ydist12 = abs(carpos12(2)-poscowY(1));    
+    Xdist12 = abs((carpos12(1)+carpos12(3)/2)-(posfrogX(1)));
+    Ydist12 = abs(carpos12(2)-posfrogY(1));    
     
     %When car 12 exits the screen.    
     carpos12(1) = rand12;
@@ -282,8 +281,8 @@ function Win()
     youwin1()
     pause(4)
     delete(gca)
-    delete(fig1)
-    Frogger()
+    delete(fig1)  
+    startscreen()
 end
 
 %Close figure before win/loss state.
@@ -295,16 +294,16 @@ end
 
 %Lose State.
 function Lose()
+    over = 1; 
     set(fig1,'KeyPressFcn',@Nokeys)
     clear sound
     [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
     sound(Carhit, Carhit_fps);
     %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
-    pause(2)
-    over = 1;   
+    pause(2)      
     youlose1() 
     pause(1)
     delete(fig1) 
-    Frogger()
+    startscreen()
 end
 end
