@@ -30,3 +30,4 @@ Things to do:
 - Add music for every difficulty
 - Fix error codes regarding closing the figure early
 - Credit music in report
+- CHANGE NAME OF COW TO FROG
