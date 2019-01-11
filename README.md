@@ -1,22 +1,14 @@
 # F-Society-Group-Project
 Download 
-- startscreen.m 
-- Easymode.m
-- Hardmode.m
-- Hardestmode.m
-- Chaosmode.m
-- carstarthonkbackfire.mp3
-- cheer2.mp3
-- sound-frogger-hop.wav
+- Frogger File
          
-Start game using startscreen.m
+Start game using Frogger.m
 
 Note: Some of the audio which we are yet to add has been commented out
 
 Things to do:
 
 - Work on Chaosmode.m
-- Add delay after each frog movement
 - Add music for start screen menu
 - Add music for every difficulty
-- Fix error codes regarding lose and win state
+- Fix error codes regarding closing the figure early
