@@ -1,11 +1,13 @@
 # F-Society-Group-Project: Frogger
 
 Download 
-- Frogger File
+- All files in the master branch.
 
-Enable Sound.
+Please enable Sound.
          
 Start the game using Frogger.m, which loads up the menu screen.
+
+Choose a difficulty using the dropdown box in the bottom right of the screen.
 
 Please do not close the game after selecting a difficulty. THE GAME WILL CLOSE BY ITSELF upon completing or failing to accomplish the aim of the game.
 It is however fine to close the game on the Menu screen.
