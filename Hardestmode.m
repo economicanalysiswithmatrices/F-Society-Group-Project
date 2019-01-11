@@ -259,7 +259,7 @@ while over==0
         set(car(4),'position',carpos4);
     end
     
-    If there is a collision.
+    %If there is a collision.
     if Ydist4<1/100 && Xdist4<(carpos1(3)/2)
         Lose()  
         break
