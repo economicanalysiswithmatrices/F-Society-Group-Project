@@ -162,6 +162,7 @@ while over==0
     %When frog reaches greener grass.
     if poscowY > 6
         Win()
+        break
     end     
     
     %%%%Car 1%%%
@@ -186,6 +187,7 @@ while over==0
     %If there is a collision.    
     if Ydist1<1/10 && Xdist1<(carpos1(3)/2)
         Lose()
+        break
     end  
 
     %%%Car 2%%%
@@ -210,6 +212,7 @@ while over==0
     %If there is a collision.
     if Ydist2<1/100 && Xdist2<(carpos2(3)/2)
         Lose()
+        break
     end
 
     %%%Car 3%%%
@@ -234,6 +237,7 @@ while over==0
     %If there is a collision.     
     if Ydist3<1/100 && Xdist3<((carpos3(3)/2))
         Lose()
+        break
     end
     
     %%%Car 4%%%
@@ -255,10 +259,11 @@ while over==0
         set(car(4),'position',carpos4);
     end
     
-    %If there is a collision.
-    %if Ydist4<1/100 && Xdist4<(carpos1(3)/2)
-    %    Lose()   
-    %end
+    If there is a collision.
+    if Ydist4<1/100 && Xdist4<(carpos1(3)/2)
+        Lose()  
+        break
+    end
     
     %%%Car 5%%%
     
@@ -282,6 +287,7 @@ while over==0
     %If there is a collision.    
     if Ydist5<1/100 && Xdist5<(carpos5(3)/2)
         Lose()
+        break
     end
     
      %%%Car 6%%%
@@ -306,6 +312,7 @@ while over==0
     %If there is a collision.    
     if Ydist6<1/100 && Xdist6<((carpos6(3)/2)+0.5)
         Lose()
+        break
     end 
     
     %%%Car 7%%%
@@ -330,6 +337,7 @@ while over==0
     %If there is a collision.
     if Ydist7<1/100 && Xdist7<(carpos7(3)/2)
         Lose()
+        break
     end
     
     %%%Car 8%%%
@@ -354,6 +362,7 @@ while over==0
     %If there is a collision.    
     if Ydist8<1/100 && Xdist8<(carpos8(3)/2)
         Lose()
+        break
     end
     
     %%%Car 9%%%
@@ -378,6 +387,7 @@ while over==0
     %If there is a collision.    
     if Ydist9<1/100 && Xdist9<(carpos9(3)/2)
         Lose()
+        break
     end 
     
     %%%Car 10%%%
@@ -402,6 +412,7 @@ while over==0
     %If there is a collision.    
     if Ydist10<1/100 && Xdist10<(carpos10(3)/2)
         Lose()
+        break
     end 
     
     %%%Car 11%%%
@@ -426,6 +437,7 @@ while over==0
     %If there is a collision.    
     if Ydist11<1/100 && Xdist6<(carpos11(3)/2)
         Lose()
+        break
     end 
     
       %%%Car 12%%%
@@ -450,6 +462,7 @@ while over==0
     %If there is a collision.    
     if Ydist12<1/100 && Xdist12<(carpos12(3)/2)
         Lose()
+        break
     end 
     
 end
