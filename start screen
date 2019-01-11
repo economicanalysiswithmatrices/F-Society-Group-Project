@@ -79,14 +79,14 @@ elseif diff(1) == 4
     Hardestmode()
     a = 1
 
-%elseif diff(1) == 5
-%    display('Chaos mode initiating...')
- %   pause(1)
- %   clear sound
- %   close(f)
- %   pause(0.5)
- %   Chaosmode()
- %   a = 1    
+elseif diff(1) == 5
+    display('Chaos mode initiating...')
+    pause(1)
+    clear sound
+    close(f)
+    pause(0.5)
+    Chaosmode()
+    a = 1    
 end
 end
 end
