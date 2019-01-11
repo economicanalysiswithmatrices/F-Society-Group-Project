@@ -7,8 +7,8 @@ f = figure('menubar','none','closereq', @Closefig);
 axis off
 
 %Create menu background.
-rectangle('position',[0 0 10 5]) %big boundry
-rectangle('position',[0 0 10 2],'facecolor',[0 0.5,0])%lanes
+rectangle('position',[0 0 10 5])
+rectangle('position',[0 0 10 2],'facecolor',[0 0.5,0])
 rectangle('position',[0 1.25 10 1],'facecolor','k')
 rectangle('position',[0 2 10 1],'facecolor','k')
 rectangle('position',[0 3 10 1],'facecolor','k')
