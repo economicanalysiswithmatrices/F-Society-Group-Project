@@ -57,7 +57,6 @@ c.Callback = @selection;
     function selection(~,~)
         val = c.Value;
         str = c.String;
-        str{val};
         disp(['Selection: ' str{val}]);   
     end
 
@@ -80,7 +79,7 @@ pause(0.5)
 
 %Easy mode is selected
 if diff(1) == 2
-    display('Easy mode initiating...')
+    disp('Easy mode initiating...');
     pause(1)
     clear sound
     close(f)
@@ -90,7 +89,7 @@ if diff(1) == 2
 
 %Hard mode is selected
 elseif diff(1) == 3
-    display('Hard mode initiating...')
+    disp('Hard mode initiating...');
     pause(1)
     clear sound
     close(f)
@@ -100,7 +99,7 @@ elseif diff(1) == 3
 
 %Hardest mode is selected
 elseif diff(1) == 4
-    display('Hardest mode initiating...')
+    disp('Hardest mode initiating...');
     pause(1)
     clear sound
     close(f)
@@ -110,7 +109,7 @@ elseif diff(1) == 4
 
 %Chaos mode is selected
 elseif diff(1) == 5
-    display('Chaos mode initiating...')
+    disp('Chaos mode initiating...');
     pause(1)
     clear sound
     close(f)
