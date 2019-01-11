@@ -24,10 +24,13 @@ rectangle('position',[0 4 10 1],'facecolor','g')
 text(0.75,1,{'How To Play'},'color','m','fontsize',18);
 
 %Cross Road.
-text(0.5,0.5,{'Cross the road without getting hit.'},'color','w','fontsize',12);
+text(0.5,0.75,{'Cross the road without getting hit.'},'color','w','fontsize',12);
 
-%Arrowkeys.
-text(0.5,0.25,{'Use arrow keys to move.'},'color','w','fontsize',12);
+%WSAD.
+text(0.5,0.5,{'Use W, S, A and D to move up, down,'},'color','w','fontsize',12);
+
+%Key description.
+text(0.5,0.25,{'left and right respectively.'},'color','w','fontsize',12);
 
 %Title.
 text(3.5,4.5,{'Frogger'},'color','k','fontsize',30,'fontweight','bold');
