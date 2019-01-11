@@ -4,6 +4,7 @@ Download
 - Easymode.m
 - Hardmode.m
 - Hardestmode.m
+- Chaosmode.m
 - carstarthonkbackfire.mp3
 - cheer2.mp3
 - sound-frogger-hop.wav
@@ -14,7 +15,7 @@ Note: Some of the audio which we are yet to add has been commented out
 
 Things to do:
 
-- Create Chaosmode.m
+- Work on Chaosmode.m
 - Add delay after each frog movement
 - Add music for start screen menu
 - Add music for every difficulty
