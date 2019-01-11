@@ -282,7 +282,8 @@ function Win()
     youwin1()
     pause(4)
     delete(gca)
-    delete(fig1)    
+    delete(fig1)
+    Frogger()
 end
 
 %Close figure before win/loss state.
@@ -303,6 +304,7 @@ function Lose()
     over = 1;   
     youlose1() 
     pause(1)
-    delete(fig1)    
+    delete(fig1) 
+    Frogger()
 end
 end
