@@ -3,6 +3,9 @@ function Frogger
 %Create figure for start screen.
 f = figure('menubar','none','closereq', @Closefig);
 
+%No Boundary
+axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 5])
+
 % Turn off axis.
 axis off
 
@@ -27,7 +30,7 @@ text(0.5,0.5,{'Cross the road without getting hit.'},'color','w','fontsize',12);
 text(0.5,0.25,{'Use arrow keys to move.'},'color','w','fontsize',12);
 
 %Title.
-text(3.25,4.5,{'Frogger'},'color','k','fontsize',30,'fontweight','bold');
+text(3.5,4.5,{'Frogger'},'color','k','fontsize',30,'fontweight','bold');
 
 %Difficulty.
 text(6.5,1,{'Choose Difficulty'},'color','r','fontsize',15);
@@ -47,7 +50,7 @@ a = 0;
 %%
 %Popup mneu to select difficulty.
 c = uicontrol(f,'Style','popupmenu');
-c.Position = [400 80 85 10];
+c.Position = [400 50 85 10];
 c.String = {'Select','Easy','Hard','Hardest','Chaos'};
 c.Callback = @selection;
 
