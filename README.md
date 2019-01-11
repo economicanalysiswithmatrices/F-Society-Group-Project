@@ -27,6 +27,7 @@ Note: Some of the audio which we are yet to add has been commented out
 
 Things to do:
 
+- Finish README section
 - Add music for start screen menu
 - Add music for every difficulty
 - Credit music in report
