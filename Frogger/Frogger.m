@@ -44,6 +44,7 @@ sound(Opening, Opening_fps);
 %Flag for while loop.
 a = 0;
 
+%%
 %Popup mneu to select difficulty.
 c = uicontrol(f,'Style','popupmenu');
 c.Position = [400 80 85 10];
@@ -57,8 +58,7 @@ c.Callback = @selection;
         disp(['Selection: ' str{val}]);   
     end
 
-
-
+%%
 %When figure is closed manually.
 function Closefig(varargin)
 a = 1;
