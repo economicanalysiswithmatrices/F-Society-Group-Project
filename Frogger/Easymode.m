@@ -2,7 +2,7 @@ function Easymode()
 %Creates figure for game.
 fig1 = figure('menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900],'closereq', @Closefig);
 
-%No boundary around game
+%No boundary around game.
 axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 5])
 
 %Start grass.
