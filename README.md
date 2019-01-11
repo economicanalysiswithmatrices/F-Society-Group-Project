@@ -32,5 +32,6 @@ Things to do:
 - Change Win and lose text to something readable on every colour car
 - Change Win and lose font?
 - Use 'You win' and 'You lose' images instead?
+- Change Menu Instructions
 
 
