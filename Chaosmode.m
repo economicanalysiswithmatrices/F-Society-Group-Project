@@ -123,11 +123,11 @@ car(12) = rectangle('position',[6 6 1.5 0.9],'facecolor', 'y','edgecolor','w','l
 
 
 %Random speed of cars upon game startup within a set range of values.
-rand1 = 10*rand()
-rand2 = 10*rand()
-rand3 = 10*rand()
-rand8 = 10*rand()
-rand12 = 10*rand()
+ rand1 = -1.5+9*rand();
+ rand2 = -1.5+9*rand();
+ rand3 = -1.5+9*rand();
+ rand8 = -1.5+9*rand();
+ rand12 = -1.5+9*rand();
 
 
 %%
@@ -144,11 +144,11 @@ while over==0
     carpos12 = get(car(12),'position');
     
     %Random location of cars upon after every loop.
-    rand1 = 8*rand();
-    rand2 = 8*rand();
-    rand3 = 8*rand();
-    rand8 = 8*rand();
-    rand12 = 8*rand();
+    rand1 = -1.5+9*rand();
+    rand2 = -1.5+9*rand();
+    rand3 = -1.5+9*rand();
+    rand8 = -1.5+9*rand();
+    rand12 = -1.5+9*rand();
     
     %Gets Y position of frog for collisions.
     poscowY = get(cow,'YData');
