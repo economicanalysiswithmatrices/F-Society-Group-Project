@@ -123,11 +123,11 @@ car(12) = rectangle('position',[6 6 1.5 0.9],'facecolor', 'y','edgecolor','w','l
 
 
 %Random speed of cars upon game startup within a set range of values.
- rand1 = -1.5+9*rand();
- rand2 = -1.5+9*rand();
+ rand1 = -1+9*rand();
+ rand2 = -1.5.5+9*rand();
  rand3 = -1.5+9*rand();
- rand8 = -1.5+9*rand();
- rand12 = -1.5+9*rand();
+ rand8 = -0.5+9*rand();
+ rand12 = -0.75+9*rand();
 
 
 %%
@@ -144,11 +144,11 @@ while over==0
     carpos12 = get(car(12),'position');
     
     %Random location of cars upon after every loop.
-    rand1 = -1.5+9*rand();
-    rand2 = -1.5+9*rand();
+    rand1 = -1+9*rand();
+    rand2 = -1.5.5+9*rand();
     rand3 = -1.5+9*rand();
-    rand8 = -1.5+9*rand();
-    rand12 = -1.5+9*rand();
+    rand8 = -0.5+9*rand();
+    rand12 = -0.75+9*rand();
     
     %Gets Y position of frog for collisions.
     poscowY = get(cow,'YData');
@@ -156,6 +156,7 @@ while over==0
     %When frog reaches greener grass.
     if poscowY > 6
         Win()
+        break
     end     
     
     %%%%Car 1%%%
@@ -173,6 +174,7 @@ while over==0
     %If there is a collision.    
     if Ydist1<1/10 && Xdist1<(carpos1(3)/2)
         Lose()
+        break
     end  
 
     %%%Car 2%%%
@@ -190,6 +192,7 @@ while over==0
     %If there is a collision.
     if Ydist2<1/100 && Xdist2<(carpos2(3)/2)
         Lose()
+        break
     end
 
     %%%Car 3%%%
@@ -200,13 +203,14 @@ while over==0
     Ydist3 = abs(carpos3(2)-poscowY(1));    
    
    %When car 3 exits the screen.    
-    carpos3(1) = rand1;
+    carpos3(1) = rand3;
     randicol = colorarray{randi(col)};
     set(car(3),'position',carpos3,'facecolor',randicol); 
 
     %If there is a collision.     
     if Ydist3<1/100 && Xdist3<((carpos3(3)/2))
         Lose()
+        break
     end    
     
     %%%Car 8%%%
@@ -224,6 +228,7 @@ while over==0
     %If there is a collision.    
     if Ydist8<1/100 && Xdist8<(carpos8(3)/2)
         Lose()
+        break
     end
     
       %%%Car 12%%%
@@ -241,6 +246,7 @@ while over==0
     %If there is a collision.    
     if Ydist12<1/100 && Xdist12<(carpos12(3)/2)
         Lose()
+        break
     end 
     
 end
