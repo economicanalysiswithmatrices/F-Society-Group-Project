@@ -33,6 +33,6 @@ Things to do:
 - Change Win and lose font?
 - Use 'You win' and 'You lose' images instead?
 - Change Menu Instructions
-- Add multiple sounds for the game and make it play a random theme each time?
+- Add multiple sounds for the game and choose a random theme each time?
 
 
