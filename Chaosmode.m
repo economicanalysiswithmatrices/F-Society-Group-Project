@@ -127,11 +127,11 @@ car(12) = rectangle('position',[6 6 1.5 0.9],'facecolor', 'y','edgecolor','w','l
 
 
 %Random speed of cars upon game startup within a set range of values.
-rand1 = -1.5+9*rand();
-rand2 = -1.5+9*rand();
-rand3 = -1.5+9*rand();
-rand8 = -1.5+9*rand();
-rand12 = -1.5+9*rand();
+rand1 = -1.5+10*rand();
+rand2 = -1.5+10*rand();
+rand3 = -1.5+10*rand();
+rand8 = -1.5+10*rand();
+rand12 = -1.5+10*rand();
 
 %%
 function speed4()
