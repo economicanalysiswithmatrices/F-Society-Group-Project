@@ -108,15 +108,15 @@ car(6) = rectangle('position',[1 3 1.5 0.9],'facecolor', 'w','edgecolor','w','li
 car(7) = rectangle('position',[2 2 2.5 0.9],'facecolor', 'b','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
 
 %Random speed of cars upon game startup within a set range of values.
-rand1 = 0.02+0.03*rand();
-rand2 = 0.02+0.03*rand();
-rand3 = 0.02+0.03*rand();
+rand1 = 2*(0.02+0.03*rand());
+rand2 = 2*(0.02+0.03*rand());
+rand3 = 2*(0.02+0.03*rand());
 
 %%
 function speed2()
 while over==0
     %Sets a fixed refresh rate for the game.
-    pause(0.003)
+    pause(0.006)
     
     %Get X position of each car every 0.01s.
     carpos1 = get(car(1),'position');
