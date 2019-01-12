@@ -63,8 +63,11 @@ frog = patch(xRana,yRana,'y','edgecolor','b');
 posfrogX = get(frog,'XData');
 posfrogY = get(frog,'YData');
 
+%Frog hop sound.
 %http://www.classicgaming.cc/classics/frogger/sounds
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
+
+% Sound that runs in the background of the game.
 [Bg, Bg_fps] = audioread('Super Mario Bros (NES) Music - Underground Theme.mp3');
 sound(Bg, Bg_fps);
 
