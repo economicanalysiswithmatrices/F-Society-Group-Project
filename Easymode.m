@@ -57,6 +57,15 @@ posfrogY = get(frog,'YData');
 [Bg, Bg_fps] = audioread('Super Mario Bros (NES) Music - Underground Theme.mp3');
 sound(Bg, Bg_fps);
 
+
+%Random Sound upon game launch??
+%soundfiles = {'Song1.mp3','Song2.mp3'};
+%sound1 = length(soundfiles);
+%randsound = soundfiles(randi(sound1));
+%rs = string(randsound);
+%[Bg, Bg_fps] = audioread(rs);
+%sound(Bg, Bg_fps);
+
 %%
 function presskeys(varargin)              
 
