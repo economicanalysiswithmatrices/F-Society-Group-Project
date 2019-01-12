@@ -71,7 +71,7 @@ posfrogY = get(frog,'YData');
 %%
 function presskeys(varargin)              
 
-    %'Switch' case for arrow keys.
+    %'Switch' case for WASD.
     switch varargin{2}.Key
                 
         case 'w'                             
