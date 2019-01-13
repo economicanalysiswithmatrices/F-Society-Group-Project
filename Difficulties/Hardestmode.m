@@ -64,7 +64,6 @@ posfrogX = get(frog,'XData');
 posfrogY = get(frog,'YData');
 
 %Frog hop sound.
-%http://www.classicgaming.cc/classics/frogger/sounds
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
 
 %Sound that runs in the background of the game.
