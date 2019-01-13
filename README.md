@@ -34,5 +34,7 @@ Things to do:
 - Use 'You win' and 'You lose' images instead?
 - Change Menu Instructions
 - Add multiple sounds for the game and choose a random theme each time?
+- Add sound folder.
+- Credit AddPath code.
 
 
