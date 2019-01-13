@@ -267,7 +267,7 @@ end
 
 %'You Lose.' text appears on lose state.
 function youlose1()
-    youlose = text(0,4.8,{'You Lose.'},'color','k','fontsize',90,'backgroundcolor','r');
+    youlose = text(0,4.8,{'Of course you lost.'},'color','k','fontsize',90,'backgroundcolor','r');
     set(youlose,'visible','on');
 end
 
