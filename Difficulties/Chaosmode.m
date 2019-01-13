@@ -303,7 +303,7 @@ function Lose()
     sound(Carhit, Carhit_fps);
     pause(2)      
     youlose1() 
-    pause(1)
+    pause(2)
     delete(fig1) 
     Frogger()
 end
