@@ -148,11 +148,11 @@ while over==0
     carpos12 = get(car(12),'position');
     
     %Random location of cars upon after every loop.
-    rand1 = -1+9*rand();
-    rand2 = -1.5+9*rand();
-    rand3 = -1.5+9*rand();
-    rand8 = -0.5+9*rand();
-    rand12 = -0.5+9*rand();
+    rand1 = -1+10*rand();
+    rand2 = -1.5+10*rand();
+    rand3 = -1.5+10*rand();
+    rand8 = -0.5+10*rand();
+    rand12 = -0.5+10*rand();
     
     %Gets Y position of frog for collisions.
     posfrogY = get(frog,'YData');
