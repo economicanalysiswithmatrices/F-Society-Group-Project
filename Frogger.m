@@ -49,6 +49,7 @@ yRana =1.25+40.*[0.0 0.0 0.1 0.4 0.1 0.1 0.4 0.1 0.0 0.0 0.1  0.4 0.5 0.4 0.6 0.
 patch(xRana,yRana,'y','edgecolor','b');
 
 %Menu music.
+%Credit: Antonio Mele.
 %[Opening, Opening_fps] = audioread('OPENING.mp3'); %PLACEHOLDER SOUND
 %sound(Opening, Opening_fps);
 
