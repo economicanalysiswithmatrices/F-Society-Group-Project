@@ -50,8 +50,8 @@ patch(xRana,yRana,'y','edgecolor','b');
 
 %Menu music.
 %Credit: Antonio Mele.
-%[Opening, Opening_fps] = audioread('OPENING.mp3'); %PLACEHOLDER SOUND
-%sound(Opening, Opening_fps);
+[Opening, Opening_fps] = audioread('Gerudo Valley.mp3');
+sound(Opening, Opening_fps);
 
 %Flag for while loop.
 a = 0;
