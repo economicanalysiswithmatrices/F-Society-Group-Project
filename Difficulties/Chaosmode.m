@@ -261,13 +261,13 @@ speed4()
 %%
 %'You Win!' text appears on win state.
 function youwin1()
-    youwin = text(0,4.8,{" You're Lucky..."},'color','k','fontsize',185,'backgroundcolor','c');
+    youwin = text(0,4.8,{" You're Lucky..."},'color','k','fontsize',115,'backgroundcolor','c');
     set(youwin,'visible','on');
 end    
 
 %'You Lose.' text appears on lose state.
 function youlose1()
-    youlose = text(0,4.8,{'You Lose.'},'color','k','fontsize',170,'backgroundcolor','r');
+    youlose = text(0,4.8,{'You Lose.'},'color','k','fontsize',90,'backgroundcolor','r');
     set(youlose,'visible','on');
 end
 
