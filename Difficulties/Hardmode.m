@@ -48,13 +48,15 @@ frog = patch(xRana,yRana,'y','edgecolor','b');
 posfrogX = get(frog,'XData');
 posfrogY = get(frog,'YData');
 
-%Frog hop sound
-%http://www.classicgaming.cc/classics/frogger/sounds
+%Frog hop sound.
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
 
-%Sound that runs in the background of the game.
-%https://archive.org/details/SuperMarioBrosNESMusicHurriedOverworld/Super+Mario+Bros+(NES)+Music+-+Underground+Theme.mp3
-[Bg, Bg_fps] = audioread('Super Mario Bros (NES) Music - Underground Theme.mp3'); % THIS IS A PLACEHOLDER
+%Random background sound upon game launch.
+soundfiles = {'Super Mario Bros (NES) Music - Underground Theme.mp3','Undertale OST 36 - Dummy! (Mad Dummy Boss Theme).mp3','};
+sound1 = length(soundfiles);
+randsound = soundfiles(randi(sound1));
+rs = string(randsound);
+[Bg, Bg_fps] = audioread(rs);
 sound(Bg, Bg_fps);
 
 %%
