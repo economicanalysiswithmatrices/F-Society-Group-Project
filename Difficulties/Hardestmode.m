@@ -68,8 +68,7 @@ posfrogY = get(frog,'YData');
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
 
 %Sound that runs in the background of the game.
-%https://archive.org/details/SuperMarioBrosNESMusicHurriedOverworld/Super+Mario+Bros+(NES)+Music+-+Underground+Theme.mp3
-[Bg, Bg_fps] = audioread('Super Mario Bros (NES) Music - Underground Theme.mp3');
+[Bg, Bg_fps] = audioread('Rammstein - Waidmanns Heil (instrumental with lyrics).mp3');
 sound(Bg, Bg_fps);
 
 %%
@@ -498,7 +497,6 @@ function Win()
     clear sound
     [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
     sound(CheerSound, Cheer_fps);    
-    %https://www.freesoundeffects.com/free-track/cheer2-426825/
     youwin1()
     pause(4)
     delete(gca)
@@ -519,7 +517,6 @@ function Lose()
     clear sound
     [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
     sound(Carhit, Carhit_fps);
-    %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
     pause(2)
     over = 1;   
     youlose1() 
