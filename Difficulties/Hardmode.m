@@ -58,6 +58,8 @@ randsound = soundfiles(randi(sound1));
 rs = string(randsound);
 [Bg, Bg_fps] = audioread(rs);
 sound(Bg, Bg_fps);
+disp('Song: ');
+disp(rs);
 
 %%
 %Credit: Gustavo Rodriguez.
