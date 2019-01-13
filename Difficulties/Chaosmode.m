@@ -278,7 +278,7 @@ function Win()
     set(fig1,'KeyPressFcn',@Nokeys)
     over = 1;
     clear sound
-    [MGTC_FPS, MGTC_fps] = audioread('MOM GET THE CAMERA - MLG Sound Effects (HD)');
+    [MGTC_FPS, MGTC_fps] = audioread('MOM GET THE CAMERA - MLG Sound Effects (HD).mp3');
     sound(MGTC, MGTC_fps);
     youwin1()
     pause(16)
