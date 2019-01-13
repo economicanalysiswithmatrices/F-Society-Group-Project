@@ -3,7 +3,6 @@
 Download 
 - All files and folders in the master branch.
 
-
 Start the game using Frogger.m, which loads up the menu screen.
 
 Please enable Sound.        
@@ -21,20 +20,4 @@ There are four difficulties to choose from.
 3. Hardest mode - More cars, faster cars and more lanes? This mode truly challenges the player.
 4. Chaos mode - For those who think they can accomplish the impossible (Epilepsy warning).
 
-Note: Some of the audio which we are yet to add has been commented out
-
-Things to do:
-
-- Finish README section
-- Add music for start screen menu
-- Add music for every difficulty
-- Credit music in report
-- Change Win and lose text to something readable on every colour car
-- Change Win and lose font?
-- Use 'You win' and 'You lose' images instead?
-- Change Menu Instructions
-- Add multiple sounds for the game and choose a random theme each time?
-- Add sound folder.
-- Credit AddPath code.
-
-
+Complete the hardest difficulty to unlock an easter egg!
