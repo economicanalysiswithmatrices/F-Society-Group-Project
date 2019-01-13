@@ -69,6 +69,8 @@ posfrogY = get(frog,'YData');
 %Sound that runs in the background of the game.
 [Bg, Bg_fps] = audioread('Rammstein - Waidmanns Heil (instrumental with lyrics).mp3');
 sound(Bg, Bg_fps);
+disp('Song: ');
+disp('Rammstein - Waidmanns Heil (instrumental with lyrics).mp3');
 
 %%
 %Credit: Gustavo Rodriguez.
