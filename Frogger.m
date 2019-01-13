@@ -1,6 +1,6 @@
 function Frogger
 
-% add all folders to path
+% Add all folders to path.
 % Credit: Antonio Mele
 folders_to_be_added = genpath(pwd);
 addpath(folders_to_be_added );
