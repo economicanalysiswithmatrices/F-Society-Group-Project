@@ -52,7 +52,7 @@ posfrogY = get(frog,'YData');
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
 
 %Random background sound upon game launch.
-soundfiles = {'Undertale - 043 - Temmie Village.mp3','Undertale - 043 - Temmie Village.mp3','Undertale - 043 - Temmie Village.mp3'};
+soundfiles = {'Undertale - 043 - Temmie Village.mp3','Undertale OST 005 - Ruins.mp3','Undertale OST 13 - Home (Music Box).mp3'};
 sound1 = length(soundfiles);
 randsound = soundfiles(randi(sound1));
 rs = string(randsound);
