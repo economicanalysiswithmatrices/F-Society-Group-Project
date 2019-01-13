@@ -259,7 +259,7 @@ speed4()
 %%
 %'You're Lucky...'!' text appears on win state.
 function youwin1()
-    youwin = text(0,4.8,{" You're Lucky..."},'color','k','fontsize',115,'backgroundcolor','c');
+    youwin = text(0,4.8,{"You're Lucky..."},'color','k','fontsize',115,'backgroundcolor','c');
     set(youwin,'visible','on');
 end    
 
