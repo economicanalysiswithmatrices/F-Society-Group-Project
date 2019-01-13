@@ -57,7 +57,7 @@ patch(xRana,yRana,'y','edgecolor','b');
 a = 0;
 
 %%
-%Popup mneu to select difficulty.
+%Popup menu to select difficulty.
 c = uicontrol(f,'Style','popupmenu');
 c.Position = [400 50 85 10];
 c.String = {'Select','Easy','Hard','Hardest','Chaos'};
@@ -91,7 +91,8 @@ if diff(1) == 2
     disp('Easy mode initiating...');
     pause(1)
     clear sound
-    close(f)
+    delete(gca)
+    delete(f)
     pause(0.5)
     Easymode()
     a = 1;
@@ -101,7 +102,8 @@ elseif diff(1) == 3
     disp('Hard mode initiating...');
     pause(1)
     clear sound
-    close(f)
+    delete(gca)
+    delete(f)
     pause(0.5)
     Hardmode()
     a = 1;
@@ -111,7 +113,8 @@ elseif diff(1) == 4
     disp('Hardest mode initiating...');
     pause(1)
     clear sound
-    close(f)
+    delete(gca)
+    delete(f)
     pause(0.5)
     Hardestmode()
     a = 1;
@@ -121,7 +124,8 @@ elseif diff(1) == 5
     disp('Chaos mode initiating...');
     pause(1)
     clear sound
-    close(f)
+    delete(gca)
+    delete(f)
     pause(0.5)
     Chaosmode()
     a = 1;   
