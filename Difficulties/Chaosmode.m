@@ -280,11 +280,10 @@ function Win()
     set(fig1,'KeyPressFcn',@Nokeys)
     over = 1;
     clear sound
-    [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
-    sound(CheerSound, Cheer_fps);    
-    %https://www.freesoundeffects.com/free-track/cheer2-426825/
+    [MGTC_FPS, MGTC_fps] = audioread('MOM GET THE CAMERA - MLG Sound Effects (HD)');
+    sound(MGTC, MGTC_fps);
     youwin1()
-    pause(4)
+    pause(16)
     delete(gca)
     delete(fig1)  
     Frogger()
@@ -304,7 +303,6 @@ function Lose()
     clear sound
     [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
     sound(Carhit, Carhit_fps);
-    %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
     pause(2)      
     youlose1() 
     pause(1)
