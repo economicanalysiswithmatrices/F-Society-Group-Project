@@ -345,8 +345,7 @@ function Win()
     over = 1;
     clear sound
     [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
-    sound(CheerSound, Cheer_fps);    
-    %https://www.freesoundeffects.com/free-track/cheer2-426825/
+    sound(CheerSound, Cheer_fps);
     youwin1()
     pause(4)
     delete(gca)
@@ -368,7 +367,6 @@ function Lose()
     clear sound
     [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
     sound(Carhit, Carhit_fps);
-    %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
     pause(2)
     over = 1;   
     youlose1() 
