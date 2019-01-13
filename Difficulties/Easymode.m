@@ -2,7 +2,7 @@ function Easymode()
 %Creates figure for game.
 fig1 = figure('NumberTitle','off','Name','Easy Mode','menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900],'closereq', @Closefig);
 
-%No boundary around game
+%No boundary around game.
 axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 5])
 
 %Start grass.
@@ -49,11 +49,10 @@ posfrogX = get(frog,'XData');
 posfrogY = get(frog,'YData');
 
 %Frog hop sound.
-%http://www.classicgaming.cc/classics/frogger/sounds
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
 
 %Random background sound upon game launch.
-soundfiles = {'Super Mario Bros (NES) Music - Underground Theme.mp3','Undertale OST 36 - Dummy! (Mad Dummy Boss Theme).mp3'};
+soundfiles = {'Undertale - 043 - Temmie Village.mp3','Undertale - 043 - Temmie Village.mp3','Undertale - 043 - Temmie Village.mp3'};
 sound1 = length(soundfiles);
 randsound = soundfiles(randi(sound1));
 rs = string(randsound);
@@ -103,11 +102,6 @@ function presskeys(varargin)
 end
 
 %%
-
-%Figure Boundary limits
-%axes1 = axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 5])
-%xlim([0 10])
-%ylim([0 5])
 
 %Used for random car colours.
 colorarray = {'y','m','c','r','b','g'};
@@ -300,7 +294,6 @@ function Win()
     clear sound
     [CheerSound, Cheer_fps] = audioread('cheer2.mp3');
     sound(CheerSound, Cheer_fps);    
-    %https://www.freesoundeffects.com/free-track/cheer2-426825/
     youwin1()
     pause(5)
     delete(gca)
@@ -322,7 +315,6 @@ function Lose()
     clear sound
     [Carhit, Carhit_fps] = audioread('carstarthonkbackfire.mp3');
     sound(Carhit, Carhit_fps);
-    %https://www.freesoundeffects.com/free-track/carstarthonkbackfire-466330/
     pause(2)
     over = 1; 
     youlose1() 
