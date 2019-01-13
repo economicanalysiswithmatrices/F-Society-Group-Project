@@ -52,7 +52,7 @@ posfrogY = get(frog,'YData');
 [Hop,Hop_fps] = audioread('sound-frogger-hop.wav');
 
 %Random background sound upon game launch.
-soundfiles = {'Super Mario Bros (NES) Music - Underground Theme.mp3','Undertale OST 36 - Dummy! (Mad Dummy Boss Theme).mp3','};
+soundfiles = {'Super Mario Bros (NES) Music - Underground Theme.mp3','Undertale OST 36 - Dummy!.mp3','};
 sound1 = length(soundfiles);
 randsound = soundfiles(randi(sound1));
 rs = string(randsound);
