@@ -2,7 +2,7 @@ function Hardestmode()
 %Creates figure for game.
 fig1 = figure('NumberTitle','off','Name','Hardest Mode','menubar','none','KeyPressFcn',@presskeys,'position', [500 90 1000 900],'closereq', @Closefig);
 
-%No boundary around game
+%No boundary around game.
 axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 8])
 
 %Start grass.
@@ -180,7 +180,7 @@ while over==0
         randicol = colorarray{randi(col)};
         set(car(1),'position',carpos1,'facecolor',randicol);                 
     
-    %Causes car 1 to move every 0.01s.    
+    %Causes car 1 to move every 0.01s.
     elseif carpos1(1) < 10    
         carpos1(1) = carpos1(1) + rand1;
         set(car(1),'position',carpos1);
