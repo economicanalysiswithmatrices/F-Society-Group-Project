@@ -1,5 +1,10 @@
 function Frogger
 
+% add all folders to path
+% Credit: Antonio Mele
+folders_to_be_added = genpath(pwd);
+addpath(folders_to_be_added );
+
 %Create figure for start screen.
 f = figure('menubar','none','closereq', @Closefig);
 
