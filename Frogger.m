@@ -6,7 +6,7 @@ folders_to_be_added = genpath(pwd);
 addpath(folders_to_be_added );
 
 %Create figure for start screen.
-f = figure('menubar','none','closereq', @Closefig);
+f = figure('NumberTitle','off','Name','Frogger','menubar','none','closereq', @Closefig);
 
 %No Boundary
 axes('Position',[0,0,1,1],'Xlim',[0 10],'Ylim',[0 5])
