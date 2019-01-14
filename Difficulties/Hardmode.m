@@ -110,8 +110,8 @@ car(1) = rectangle('position',[3 1 2 0.9],'facecolor', 'g','edgecolor','w','line
 car(2) = rectangle('position',[6 2 2.5 0.9],'facecolor', 'b','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
 car(3) = rectangle('position',[7 3 1.5 0.9],'facecolor', 'c','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
 car(4) = rectangle('position',[4 3 1.5 0.9],'facecolor', 'r','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
-car(5) = rectangle('position',[15 1 2 0.9],'facecolor', 'w','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
-car(6) = rectangle('position',[1 3 1.5 0.9],'facecolor', 'w','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
+car(5) = rectangle('position',[15 1 2 0.9],'facecolor', 'm','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
+car(6) = rectangle('position',[1 3 1.5 0.9],'facecolor', 'm','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
 car(7) = rectangle('position',[2 2 2.5 0.9],'facecolor', 'b','edgecolor','w','linewidth',2,'curvature',[0.2,0.2]);
 
 %Random speed of cars upon game startup within a set range of values.
