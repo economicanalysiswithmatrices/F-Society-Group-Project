@@ -17,7 +17,7 @@ Use the W ,S, A and D to move the frog up, down, left and right respectfully.
 There are four difficulties to choose from.
 1. Easy - Easiest mode made for beginners.
 2. Hard - More cars, faster cars, can you handle it?
-3. Hardest mode - More cars, faster cars and more lanes? This mode truly challenges the player.
-4. Chaos mode - For those who think they can accomplish the impossible (Epilepsy warning).
+3. Hardest - More cars, faster cars and more lanes? This mode truly challenges the player.
+4. Chaos - For those who think they can accomplish the impossible (Epilepsy warning).
 
-Complete the hardest difficulty to unlock an easter egg!
+Complete Chaos to unlock an easter egg!
