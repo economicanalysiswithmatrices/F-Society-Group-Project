@@ -43,7 +43,7 @@ text(3.5,4.5,{'Frogger'},'color','k','fontsize',30,'fontweight','bold');
 %Difficulty.
 text(6.5,1,{'Choose Difficulty'},'color','r','fontsize',15);
 
-%Draw frog icon.
+%Draw frog icon. Credit: Gustavo Rodriguez
 xRana = 3.75+ 40.*[0.0 0.4 0.4 0.2 0.4 0.6 0.8 0.6 0.6 1.0 0.8  1.0 0.8 0.7 0.9 0.8 0.9   0.83 0.8 0.7 0.3 0.2   0.16 0.1 0.2 0.1 0.3 0.2 0.0 0.2]/16;
 yRana =1.25+40.*[0.0 0.0 0.1 0.4 0.1 0.1 0.4 0.1 0.0 0.0 0.1  0.4 0.5 0.4 0.6 0.8 0.9   0.93 1.0 0.9 0.9 1.0   0.93 0.9 0.8 0.6 0.4 0.5 0.4 0.1]/16;
 patch(xRana,yRana,'y','edgecolor','b');
