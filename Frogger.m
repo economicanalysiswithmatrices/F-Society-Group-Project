@@ -52,6 +52,8 @@ patch(xRana,yRana,'y','edgecolor','b');
 %Credit: Antonio Mele.
 [Opening, Opening_fps] = audioread('Gerudo Valley.mp3');
 sound(Opening, Opening_fps);
+disp('Song: ');
+disp('Gerudo Valley.mp3');
 
 %Flag for while loop.
 a = 0;
